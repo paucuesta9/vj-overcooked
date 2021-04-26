@@ -153,15 +153,15 @@ PrefabInstance:
     - target: {fileID: -7075424328636806428, guid: ff995daddcab9fe4ea65371bf294757e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 0ebc8ec226420394e9a0b75b28072a17, type: 2}
     - target: {fileID: -1824083083930956161, guid: ff995daddcab9fe4ea65371bf294757e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 1b3ba787cd5b7ac4e8f4097c1a306032, type: 2}
     - target: {fileID: -1679548004997897265, guid: ff995daddcab9fe4ea65371bf294757e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 1b3ba787cd5b7ac4e8f4097c1a306032, type: 2}
     - target: {fileID: 919132149155446097, guid: ff995daddcab9fe4ea65371bf294757e, type: 3}
       propertyPath: m_Name
       value: encimera
