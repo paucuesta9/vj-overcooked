@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8215254186594483697}
   - component: {fileID: 5039547622336958592}
   - component: {fileID: 7067527244085716042}
+  - component: {fileID: 4298226710363736348}
   m_Layer: 0
   m_Name: PlatoGrande
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4298226710363736348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662699925273104276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008622792, y: 0.008622793, z: 0.0003528765}
+  m_Center: {x: -0.0000000048894435, y: -1.4571677e-16, z: 0.00017643825}
