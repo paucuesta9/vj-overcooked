@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6565474103480781852}
   m_Layer: 0
   m_Name: Sarten
-  m_TagString: Untagged
+  m_TagString: Utensilio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.016855422, y: 0.008902686, z: 0.0015038296}
+  m_Size: {x: 0.016855422, y: 0.02, z: 0.0015038296}
   m_Center: {x: -0.004088482, y: -6.092313e-11, z: 0.0007519148}
 --- !u!54 &6565474103480781852
 Rigidbody:
