@@ -43,7 +43,7 @@ public class CogerObjeto : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other) // to see when the player enters the collider
+    private void OnTriggerEnter(Collider other) // to see when the player enters the collider
     {
         Debug.Log("Enter in collision");
         if (other.gameObject.tag == "Utensilio") //on the object you want to pick up set the tag to be anything, in this case "object"
@@ -52,16 +52,34 @@ public class CogerObjeto : MonoBehaviour
             canpickup = true;  //set the pick up bool to true
             ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
         }
-        else if (other.gameObject.tag == "Encimera")
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Sale de colisión");
+        canpickup = false; //when you leave the collider set the canpickup bool to false
+        // if (other.gameObject.tag == "Encimera")
+        // {
+        //     hasEncimera = false;
+        //     Encimera = null;
+        // }
+    }
+
+    private void OnCollisionEnter(Collision other) // to see when the player enters the collider
+    {
+        Debug.Log("Enter in collision");
+        if (other.gameObject.tag == "Encimera")
         {
             hasEncimera = true;
             Encimera = other.gameObject;
+            if (hasItem == true) {
+                Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().materials[0].color = new Color(1,1,1);
+            }
         }
     }
     private void OnCollisionExit(Collision other)
     {
         Debug.Log("Sale de colisión");
-        canpickup = false; //when you leave the collider set the canpickup bool to false
+        // canpickup = false; //when you leave the collider set the canpickup bool to false
         if (other.gameObject.tag == "Encimera")
         {
             hasEncimera = false;
