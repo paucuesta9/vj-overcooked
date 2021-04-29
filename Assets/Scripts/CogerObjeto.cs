@@ -21,9 +21,9 @@ public class CogerObjeto : MonoBehaviour
 
     Color colorToPaint;
 
-    GameObject Encimera;
+    GameObject Encimera, EncimeraAux;
 
-    Utensilio utensilio;
+    Utensilio utensilio, utensilioAux;
     bool hasItem;
     bool hasEncimera;
     void Start()
@@ -43,7 +43,10 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = true;
                 utensilio.Object.transform.position = destino.transform.position;
                 utensilio.Object.transform.parent = destino.transform;
-                utensilio.Object.GetComponent<MeshRenderer>().material.color = utensilio.color;
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
+                if (utensilio.Object.tag == "Plato") {
+                    utensilio.Object.GetComponent<Collider>().enabled = true;
+                }
             }
         }
         if (Input.GetKeyDown("q") && hasItem == true)
@@ -52,6 +55,7 @@ public class CogerObjeto : MonoBehaviour
             {
                 utensilio.Object.transform.parent = Encimera.transform;
                 utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
                 if (Encimera.tag == "Encimera")
                     Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 else if (Encimera.tag == "Fogon")
@@ -70,7 +74,7 @@ public class CogerObjeto : MonoBehaviour
         var tag = other.gameObject.tag;
         if (!hasItem && !canpickup)
         {
-            if (tag == "Utensilio")
+            if (tag == "Utensilio" || tag == "Plato")
             {
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, other.gameObject.GetComponent<MeshRenderer>().material.color);
@@ -83,38 +87,46 @@ public class CogerObjeto : MonoBehaviour
                 utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
             }
         }
+        else if (!hasItem) {
+            utensilioAux = new Utensilio(other.gameObject, new Color(1,1,1));
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        canpickup = false;
-        utensilio.Object.GetComponent<MeshRenderer>().material.color = utensilio.color;
+        var tag = other.gameObject.tag;
+        Debug.Log("CUANDO TU VAS, YO VUELVO DE AHÍ " + other.gameObject.name);
+        if (other.gameObject == utensilio.Object || ((tag == "Platos") && (other.gameObject == utensilio.Object.transform.parent.gameObject))) {
+            canpickup = false;
+            if (tag == "Utensilio" || tag == "Plato") other.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
+            else if (tag == "Platos") {
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
+            }
+        }
+        if (other.gameObject == utensilioAux.Object) {
+            utensilioAux.Object = null;
+        }
+        if (utensilioAux.Object != null) {
+            OnTriggerEnter(utensilioAux.Object.GetComponent<Collider>());
+        }
+        
     }
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("Enter " + other.gameObject.name);
         var tag = other.gameObject.tag;
         if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
-            hasEncimera = true;
-            Encimera = other.gameObject;
-            if (hasItem == true)
-            {
-                if (tag == "Encimera")
-                    Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
-                else if (tag == "Fogon")
-                    foreach (Transform hijo in Encimera.transform)
-                    {
-                        if (hijo.name != "Object")
-                            hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
-                    }
-            }
+            paintFornitures(other.gameObject);
         }
+        else if (tag == "Encimera" || tag == "Fogon")EncimeraAux = other.gameObject;
     }
 
     private void OnCollisionExit(Collision other)
     {
+        Debug.Log("Exit " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if (tag == "Encimera" || tag == "Fogon")
+        if ((tag == "Encimera" || tag == "Fogon") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;
@@ -126,6 +138,13 @@ public class CogerObjeto : MonoBehaviour
                     if (hijo.name != "Object" && hijo.tag != "Utensilio")
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 }
+            if (EncimeraAux != null && !hasEncimeraAnObject(EncimeraAux)) {
+                paintFornitures(EncimeraAux);
+                EncimeraAux = null;
+            }
+        }
+        if (other.gameObject == EncimeraAux) {
+            EncimeraAux = null;
         }
     }
 
@@ -140,4 +159,22 @@ public class CogerObjeto : MonoBehaviour
         }
         return false;
     }
+
+    private void paintFornitures(GameObject mueble) {
+        hasEncimera = true;
+        Encimera = mueble;
+        var tag = Encimera.tag;
+        if (hasItem == true)
+        {
+            if (tag == "Encimera")
+                Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+            else if (tag == "Fogon")
+                foreach (Transform hijo in Encimera.transform)
+                {
+                    if (hijo.name != "Object")
+                        hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                }
+        }
+    }
 }
+    
