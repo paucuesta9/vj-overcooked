@@ -7,6 +7,8 @@ TagManager:
   - Utensilio
   - Encimera
   - Plato
+  - Platos
+  - Fogon
   layers:
   - Default
   - TransparentFX
