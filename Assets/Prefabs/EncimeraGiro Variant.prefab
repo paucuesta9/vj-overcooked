@@ -9,7 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3267933657524738410, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro
+      value: EncimeraGiro Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267933657524738410, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
+      propertyPath: m_TagString
+      value: Encimera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359734848895560187, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
+      propertyPath: m_Center.z
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641232701750004372, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
+      propertyPath: m_Name
+      value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978634975494115267, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8801475978178127771, guid: 97e37fddd8c7ef44ca8ab41c577e520b, type: 3}
       propertyPath: m_RootOrder

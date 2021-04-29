@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 940b202b077b0e84c9a3dd96456bd54f, type: 3}
       propertyPath: m_Name
-      value: esquina_encimera
+      value: EncimeraEsquina
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 940b202b077b0e84c9a3dd96456bd54f, type: 3}
+      propertyPath: m_TagString
+      value: Encimera
       objectReference: {fileID: 0}
     - target: {fileID: 2983920541312700356, guid: 940b202b077b0e84c9a3dd96456bd54f, type: 3}
       propertyPath: m_Materials.Array.data[0]
