@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7356538304510918742}
   m_Layer: 0
   m_Name: "PlatoPeque\xF1o"
-  m_TagString: Untagged
+  m_TagString: Plato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

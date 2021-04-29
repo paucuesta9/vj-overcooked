@@ -6,85 +6,126 @@ public class CogerObjeto : MonoBehaviour
 {
     public GameObject destino; //reference to your hands/the position where you want your object to go
     bool canpickup; //a bool to see if you can or cant pick up the item
-    GameObject ObjectIwantToPickUp; // the gameobject onwhich you collided with
-    GameObject Encimera;
-    bool hasItem; // a bool to see if you have an item in your hand
-    bool hasEncimera;
-    // Start is called before the first frame update
-    void Start()
+
+    struct Utensilio
     {
-        canpickup = false;    //setting both to false
-        hasItem = false;
-        hasEncimera = false;
+        public GameObject Object;
+        public Color color;
+
+        public Utensilio(GameObject Object, Color color)
+        {
+            this.Object = Object;
+            this.color = color;
+        }
     }
 
-    // Update is called once per frame
+    Color colorToPaint;
+
+    GameObject Encimera;
+
+    Utensilio utensilio;
+    bool hasItem;
+    bool hasEncimera;
+    void Start()
+    {
+        canpickup = false;
+        hasItem = false;
+        hasEncimera = false;
+        colorToPaint = new Color(0, 0, 1);
+    }
+
     void Update()
     {
-        if (canpickup == true) // if you enter thecollider of the objecct
+        if (canpickup == true)
         {
-            if (Input.GetKeyDown("e") && hasItem == false)  // can be e or any key
+            if (Input.GetKeyDown("e") && hasItem == false)
             {
                 hasItem = true;
-                ObjectIwantToPickUp.transform.position = destino.transform.position; // sets the position of the object to your hand position
-                ObjectIwantToPickUp.transform.parent = destino.transform; //makes the object become a child of the parent so that it moves with the hands
-                ObjectIwantToPickUp.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                utensilio.Object.transform.position = destino.transform.position;
+                utensilio.Object.transform.parent = destino.transform;
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = utensilio.color;
             }
         }
-        if (Input.GetKeyDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
+        if (Input.GetKeyDown("q") && hasItem == true)
         {
-            Debug.Log("Suelta");
             if (hasEncimera)
             {
-                Debug.Log("Suelta en encimers");
-                ObjectIwantToPickUp.transform.parent = Encimera.transform;
-                ObjectIwantToPickUp.transform.position = Encimera.transform.GetChild(1).position; // make the object no be a child of the hands
-                Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                utensilio.Object.transform.parent = Encimera.transform;
+                utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
+                if (Encimera.tag == "Encimera")
+                    Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                else if (Encimera.tag == "Fogon")
+                    foreach (Transform hijo in Encimera.transform)
+                    {
+                        if (hijo.name != "Object")
+                            hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    }
                 hasItem = false;
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other) // to see when the player enters the collider
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter in collision");
-        if (other.gameObject.tag == "Utensilio" && !hasItem) //on the object you want to pick up set the tag to be anything, in this case "object"
+        var tag = other.gameObject.tag;
+        if (!hasItem && !canpickup)
         {
-            Debug.Log("Enter in utensilio");
-            canpickup = true;  //set the pick up bool to true
-            ObjectIwantToPickUp = other.gameObject; //set the gameobject you collided with to one you can reference
-            ObjectIwantToPickUp.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
+            if (tag == "Utensilio")
+            {
+                canpickup = true;
+                utensilio = new Utensilio(other.gameObject, other.gameObject.GetComponent<MeshRenderer>().material.color);
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
+            }
+            else if (tag == "Platos")
+            {
+                canpickup = true;
+                utensilio = new Utensilio(other.gameObject.transform.GetChild(other.gameObject.transform.childCount - 1).gameObject, new Color(1, 1, 1));
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Sale de colisión");
         canpickup = false;
-        ObjectIwantToPickUp.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+        utensilio.Object.GetComponent<MeshRenderer>().material.color = utensilio.color;
     }
 
-    private void OnCollisionEnter(Collision other) // to see when the player enters the collider
+    private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Enter in collision");
-        if (other.gameObject.tag == "Encimera" && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
+        var tag = other.gameObject.tag;
+        if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
             hasEncimera = true;
             Encimera = other.gameObject;
             if (hasItem == true)
             {
-                Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
+                if (tag == "Encimera")
+                    Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+                else if (tag == "Fogon")
+                    foreach (Transform hijo in Encimera.transform)
+                    {
+                        if (hijo.name != "Object")
+                            hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                    }
             }
         }
     }
+
     private void OnCollisionExit(Collision other)
     {
-        Debug.Log("Sale de colisión");
-        // canpickup = false; //when you leave the collider set the canpickup bool to false
-        if (other.gameObject.tag == "Encimera")
+        var tag = other.gameObject.tag;
+        if (tag == "Encimera" || tag == "Fogon")
         {
             hasEncimera = false;
             Encimera = null;
-            other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            if (tag == "Encimera")
+                other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            else if (tag == "Fogon")
+                foreach (Transform hijo in other.gameObject.transform)
+                {
+                    if (hijo.name != "Object" && hijo.tag != "Utensilio")
+                        hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                }
         }
     }
 
@@ -92,7 +133,7 @@ public class CogerObjeto : MonoBehaviour
     {
         foreach (Transform hijo in encimera.transform)
         {
-            if (hijo.tag == "Utensilio")
+            if (hijo.tag == "Utensilio" || hijo.tag == "Platos" || hijo.tag == "Plato" || hijo.tag == "Alimento")
             {
                 return true;
             }
