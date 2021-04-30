@@ -61,7 +61,7 @@ public class CogerObjeto : MonoBehaviour
                 else if (Encimera.tag == "Fogon")
                     foreach (Transform hijo in Encimera.transform)
                     {
-                        if (hijo.name != "Object")
+                        if (hijo.name != "Object" && hijo.name != "Fuego")
                             hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                     }
                 hasItem = false;
@@ -135,7 +135,7 @@ public class CogerObjeto : MonoBehaviour
             else if (tag == "Fogon")
                 foreach (Transform hijo in other.gameObject.transform)
                 {
-                    if (hijo.name != "Object" && hijo.tag != "Utensilio")
+                    if (hijo.name != "Object" && hijo.tag != "Utensilio" && hijo.name != "Fuego")
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 }
             if (EncimeraAux != null && !hasEncimeraAnObject(EncimeraAux)) {
@@ -171,7 +171,7 @@ public class CogerObjeto : MonoBehaviour
             else if (tag == "Fogon")
                 foreach (Transform hijo in Encimera.transform)
                 {
-                    if (hijo.name != "Object")
+                    if (hijo.name != "Object" && hijo.name != "Fuego")
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
                 }
         }
