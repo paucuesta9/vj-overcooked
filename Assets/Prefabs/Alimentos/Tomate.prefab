@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8399378348163350066}
   - component: {fileID: 1059186438288025582}
   - component: {fileID: 2978580563511825188}
+  - component: {fileID: 1216413279869352250}
   m_Layer: 0
   m_Name: Tomate
   m_TagString: Comida
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1216413279869352250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477232395782678395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.9, y: 2.763918, z: 4.35}
+  m_Center: {x: 2.6624353, y: 1.925516, z: 0.47}

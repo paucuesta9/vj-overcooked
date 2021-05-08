@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8847110643453791374}
+  - component: {fileID: 4057201975213228249}
   m_Layer: 0
   m_Name: Tomate_cortado
   m_TagString: Comida
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4057201975213228249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169207087098277034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.99, y: 4.65, z: 4.96}
+  m_Center: {x: 1.73, y: 0, z: 0.22}
 --- !u!1 &8997146379742650692
 GameObject:
   m_ObjectHideFlags: 0

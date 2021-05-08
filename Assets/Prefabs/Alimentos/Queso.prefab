@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3024033541343312226}
   - component: {fileID: 5973851549208273502}
   - component: {fileID: 8431746877567342228}
+  - component: {fileID: 7435802889853782009}
   m_Layer: 0
   m_Name: Queso
   m_TagString: Comida
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3120115489451326294, guid: 413e66b1de2a798469b9744215328ce3, type: 3}
+  - {fileID: 2100000, guid: 1f2003f3106813643af81d67e5e5253b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7435802889853782009
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896753353271279960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.16121893, z: 0.4}
+  m_Center: {x: -0.09694043, y: 0.0117900735, z: -0.04}
