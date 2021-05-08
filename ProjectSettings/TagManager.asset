@@ -11,6 +11,10 @@ TagManager:
   - Fogon
   - Caja
   - Comida
+  - Tabla
+  - Pizza
+  - General
+  - Pan
   layers:
   - Default
   - TransparentFX
