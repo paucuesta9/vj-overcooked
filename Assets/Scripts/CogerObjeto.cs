@@ -42,7 +42,13 @@ public class CogerObjeto : MonoBehaviour
             Debug.Log("DALE A TU CUERPO");
             utensilio.Object = (GameObject)Instantiate(Encimera.GetComponent<PropiedadCaja>().alimento, destino.transform.position, Encimera.GetComponent<PropiedadCaja>().alimento.transform.rotation);
             utensilio.Object.transform.parent = destino.transform;
-            utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
+            if (utensilio.Object.name == "Pan_junto(Clone)") {
+                foreach (Transform hijo in utensilio.Object.transform)
+                {
+                    hijo.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
+                }
+            }
+            else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
         }
         else if (canpickup == true)
         {
@@ -65,7 +71,7 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = false;
                 utensilio.Object.transform.parent = Encimera.transform;
                 utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                if (utensilio.Object.name == "Pan") {
+                if (utensilio.Object.name == "Pan_junto(Clone)") {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
@@ -93,7 +99,7 @@ public class CogerObjeto : MonoBehaviour
             {
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0,0,1));
-                if (utensilio.Object.name == "Pan") {
+                if (utensilio.Object.name == "Pan_junto(Clone)") {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
@@ -118,7 +124,7 @@ public class CogerObjeto : MonoBehaviour
         if (other.gameObject == utensilio.Object || ((tag == "Platos") && (other.gameObject == utensilio.Object.transform.parent.gameObject))) {
             canpickup = false;
             if (tag == "Utensilio" || tag == "Plato" || tag == "Comida") {
-                if (other.gameObject.name == "Pan") {
+                if (other.gameObject.name == "Pan_junto(Clone)") {
                     foreach (Transform hijo in other.gameObject.transform)
                     {
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1,1,1);
