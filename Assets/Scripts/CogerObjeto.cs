@@ -149,11 +149,13 @@ public class CogerObjeto : MonoBehaviour
                 paintFornitures(other.gameObject);
         }
         else if (tag == "Caja" && hasEncimera == false) {
-            hasEncimera = true;
-            Encimera = other.gameObject;
-            foreach (Transform hijo in Encimera.transform)
-            {
-                hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+            if (!hasItem) {
+                hasEncimera = true;
+                Encimera = other.gameObject;
+                foreach (Transform hijo in Encimera.transform)
+                {
+                    hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                }
             }
         }
         else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja") {
