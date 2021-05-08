@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7035388804506761996}
   m_Layer: 0
   m_Name: Queso_cortado
-  m_TagString: Untagged
+  m_TagString: Comida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

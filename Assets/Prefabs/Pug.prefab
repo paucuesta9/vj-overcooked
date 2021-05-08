@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6025620839196309722}
+  - component: {fileID: 2656482243468067242}
+  - component: {fileID: 5796633338001835217}
+  - component: {fileID: -1406857675584082002}
   m_Layer: 0
   m_Name: Pug
   m_TagString: Untagged
@@ -31,6 +34,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2656482243468067242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583400859958210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b5068dc8a0606438be73eb91f91bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destino: {fileID: 0}
+  alimento: {fileID: 0}
+--- !u!114 &5796633338001835217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583400859958210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5409309b199b284cb15da54e2247980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destino: {fileID: 0}
+--- !u!114 &-1406857675584082002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583400859958210168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bdafb134aa7b649b177ae881b5c7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  rotationSpeed: 300
 --- !u!1001 &2259713116579765231
 PrefabInstance:
   m_ObjectHideFlags: 0

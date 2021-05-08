@@ -9,6 +9,8 @@ TagManager:
   - Plato
   - Platos
   - Fogon
+  - Caja
+  - Comida
   layers:
   - Default
   - TransparentFX
