@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cuchillo_cortar_separado (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 144f031f7db97084286e78cc135a0d85, type: 3}
+      propertyPath: m_TagString
+      value: General
+      objectReference: {fileID: 0}
     - target: {fileID: 8029995029160789055, guid: 144f031f7db97084286e78cc135a0d85, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -5931,6 +5935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cuchillo_pizza (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66cd1948af47137418d486719a2d2856, type: 3}
+      propertyPath: m_TagString
+      value: Pizza
+      objectReference: {fileID: 0}
     - target: {fileID: 1950012862392984340, guid: 66cd1948af47137418d486719a2d2856, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -7474,6 +7482,10 @@ PrefabInstance:
     - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_Name
       value: tabla_cortar (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
       objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
@@ -9590,6 +9602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cuchillo_pan
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc83b4299f6dc1a4795c664c54aa4636, type: 3}
+      propertyPath: m_TagString
+      value: Pan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc83b4299f6dc1a4795c664c54aa4636, type: 3}
 --- !u!1 &1022967525 stripped
@@ -9922,6 +9938,10 @@ PrefabInstance:
     - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_Name
       value: tabla_cortar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
       objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
@@ -13721,6 +13741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tabla_cortar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
+      objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14869,6 +14893,10 @@ PrefabInstance:
     - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_Name
       value: tabla_cortar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
       objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
@@ -20387,6 +20415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tabla_cortar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
+      objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -21857,6 +21889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cuchillo_cortar_separado
       objectReference: {fileID: 0}
+    - target: {fileID: 7415353779036535392, guid: ba321963b2dbc6e42925c81d4c7d5f47, type: 3}
+      propertyPath: m_TagString
+      value: General
+      objectReference: {fileID: 0}
     - target: {fileID: 7449974819371237458, guid: ba321963b2dbc6e42925c81d4c7d5f47, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21873,6 +21909,10 @@ PrefabInstance:
     - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_Name
       value: tabla_cortar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459723451248067394, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
+      propertyPath: m_TagString
+      value: Tabla
       objectReference: {fileID: 0}
     - target: {fileID: 6000746821330783747, guid: 0aa6b4de336748e458abb600e8ef574f, type: 3}
       propertyPath: m_RootOrder
@@ -21934,6 +21974,10 @@ PrefabInstance:
     - target: {fileID: 2653120386849127330, guid: 73ad8e5260a7d5d45b2b090a13f70b92, type: 3}
       propertyPath: m_Name
       value: cuchillo_pizza
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653120386849127330, guid: 73ad8e5260a7d5d45b2b090a13f70b92, type: 3}
+      propertyPath: m_TagString
+      value: Pizza
       objectReference: {fileID: 0}
     - target: {fileID: 8600967102865593627, guid: 73ad8e5260a7d5d45b2b090a13f70b92, type: 3}
       propertyPath: m_RootOrder
@@ -22063,6 +22107,10 @@ PrefabInstance:
     - target: {fileID: 4416584894024831479, guid: 2451520e0ee664c438f888a9ae927707, type: 3}
       propertyPath: m_Name
       value: cuchillo_pan (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416584894024831479, guid: 2451520e0ee664c438f888a9ae927707, type: 3}
+      propertyPath: m_TagString
+      value: Pan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2451520e0ee664c438f888a9ae927707, type: 3}
