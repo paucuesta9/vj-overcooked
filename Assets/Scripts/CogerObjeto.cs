@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CogerObjeto : MonoBehaviour
 {
-    public GameObject destino; //reference to your hands/the position where you want your object to go
-    bool canpickup; //a bool to see if you can or cant pick up the item
+    public GameObject destino;
+    public bool canpickup;
 
     struct Utensilio
     {
@@ -43,7 +43,7 @@ public class CogerObjeto : MonoBehaviour
             Debug.Log("DALE A TU CUERPO");
             utensilio.Object = (GameObject)Instantiate(Encimera.GetComponent<PropiedadCaja>().alimento, destino.transform.position, Encimera.GetComponent<PropiedadCaja>().alimento.transform.rotation);
             utensilio.Object.transform.parent = destino.transform;
-            if (utensilio.Object.name == "Pan_junto(Clone)")
+            if (utensilio.Object.name.Contains("Pan"))
             {
                 foreach (Transform hijo in utensilio.Object.transform)
                 {
@@ -59,7 +59,7 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = true;
                 utensilio.Object.transform.position = destino.transform.position;
                 utensilio.Object.transform.parent = destino.transform;
-                if (utensilio.Object.name == "Pan_junto(Clone)")
+                if (utensilio.Object.name.Contains("Pan"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
@@ -81,7 +81,7 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = false;
                 utensilio.Object.transform.parent = Encimera.transform;
                 utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                if (utensilio.Object.name == "Pan_junto(Clone)")
+                if (utensilio.Object.name.Contains("Pan"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
@@ -95,7 +95,10 @@ public class CogerObjeto : MonoBehaviour
                     foreach (Transform hijo in Encimera.transform)
                     {
                         if (hijo.name != "Object" && hijo.name != "Fuego")
+                        {
                             hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                            break;
+                        }
                     }
             }
         }
@@ -110,7 +113,7 @@ public class CogerObjeto : MonoBehaviour
             {
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
-                if (utensilio.Object.name == "Pan_junto(Clone)")
+                if (utensilio.Object.name.Contains("Pan"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
@@ -139,7 +142,7 @@ public class CogerObjeto : MonoBehaviour
             canpickup = false;
             if (tag == "Utensilio" || tag == "Plato" || tag == "Comida")
             {
-                if (other.gameObject.name == "Pan_junto(Clone)")
+                if (other.gameObject.name.Contains("Pan"))
                 {
                     foreach (Transform hijo in other.gameObject.transform)
                     {
@@ -171,7 +174,9 @@ public class CogerObjeto : MonoBehaviour
         if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
+            {
                 paintFornitures(other.gameObject);
+            }
         }
         else if (tag == "Caja" && hasEncimera == false)
         {
@@ -190,7 +195,7 @@ public class CogerObjeto : MonoBehaviour
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
                 EncimeraAux = other.gameObject;
         }
-        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject))
+        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject, 2))
         {
             other.gameObject.GetComponent<Cortar>().active = true;
         }
@@ -205,13 +210,19 @@ public class CogerObjeto : MonoBehaviour
             hasEncimera = false;
             Encimera = null;
             if (tag == "Encimera")
-                other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            {
+                if (!hasEncimeraATabla(other.gameObject, 0))
+                    other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            }
             else if (tag == "Fogon")
             {
                 foreach (Transform hijo in other.gameObject.transform)
                 {
                     if (hijo.name != "Object" && hijo.tag != "Utensilio" && hijo.name != "Fuego")
+                    {
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                        break;
+                    }
                 }
             }
             else if (tag == "Caja")
@@ -231,7 +242,7 @@ public class CogerObjeto : MonoBehaviour
         {
             EncimeraAux = null;
         }
-        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject))
+        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject, 0))
         {
             other.gameObject.GetComponent<Cortar>().active = false;
         }
@@ -249,12 +260,14 @@ public class CogerObjeto : MonoBehaviour
         return false;
     }
 
-    private bool hasEncimeraATabla(GameObject encimera)
+    private bool hasEncimeraATabla(GameObject encimera, int paint)
     {
         foreach (Transform hijo in encimera.transform)
         {
             if (hijo.tag == "Tabla")
             {
+                if (paint == 1) hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                else if (paint == 0) hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 return true;
             }
         }
@@ -269,12 +282,18 @@ public class CogerObjeto : MonoBehaviour
         if (hasItem == true)
         {
             if (tag == "Encimera")
-                Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+            {
+                if (!hasEncimeraATabla(mueble, 1))
+                    Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+            }
             else if (tag == "Fogon")
                 foreach (Transform hijo in Encimera.transform)
                 {
                     if (hijo.name != "Object" && hijo.name != "Fuego")
+                    {
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                        break;
+                    }
                 }
         }
     }
