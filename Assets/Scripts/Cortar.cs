@@ -103,22 +103,22 @@ public class Cortar : MonoBehaviour
                 if (nombre.Contains("Queso"))
                 {
                     newAlimento = (GameObject)Instantiate(quesoCortado, pos, quesoCortado.transform.rotation);
-                    newAlimento.transform.parent = transform;
+                    newAlimento.transform.SetParent(transform);
                 }
                 if (nombre.Contains("Tomate"))
                 {
                     newAlimento = (GameObject)Instantiate(tomateCortado, pos, tomateCortado.transform.rotation);
-                    newAlimento.transform.parent = transform;
+                    newAlimento.transform.SetParent(transform);
                 }
                 if (nombre.Contains("Lechuga"))
                 {
                     newAlimento = (GameObject)Instantiate(lechugaCortada, pos, lechugaCortada.transform.rotation);
-                    newAlimento.transform.parent = transform;
+                    newAlimento.transform.SetParent(transform);
                 }
                 if (nombre.Contains("Cebolla"))
                 {
                     newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
-                    newAlimento.transform.parent = transform;
+                    newAlimento.transform.SetParent(transform);
                 }
                 break;
             }
