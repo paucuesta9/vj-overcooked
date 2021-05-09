@@ -3603,7 +3603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 2
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!4 &451556984 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b387c1aa9e486074082cad0881723d9a, type: 3}
@@ -7591,7 +7593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 1
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!4 &843463609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b387c1aa9e486074082cad0881723d9a, type: 3}
@@ -14271,7 +14275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!1001 &1498290726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19007,7 +19013,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 2
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!4 &1929655764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7012456645192912880, guid: 6c249afac4fcfed4a8b47204dc3c9485, type: 3}
@@ -19987,7 +19995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!4 &2015837609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ced714d74a56004da9d77b9cc694270, type: 3}
@@ -21655,7 +21665,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  progressBarModel: {fileID: 0}
+  canCut: 0
+  typeCuchillo: 1
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
 --- !u!4 &2147083043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b387c1aa9e486074082cad0881723d9a, type: 3}

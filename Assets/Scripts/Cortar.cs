@@ -50,6 +50,7 @@ public class Cortar : MonoBehaviour
                 }
                 progreso += 1.0f/waitTime * Time.deltaTime;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
+                if (progreso >= 1) cortado();
             } else if (progreso != 0) {
                 Destroy(progresBar);
                 progreso = 0;
@@ -58,7 +59,17 @@ public class Cortar : MonoBehaviour
         } else if (progreso != 0) {
             Destroy(progresBar);
             progreso = 0;
-            progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
+        }
+    }
+
+    private void cortado() {
+        Destroy(progresBar);
+        progreso = 0;
+        foreach (Transform hijo in transform)
+        {
+            if (hijo.gameObject.tag == "Comida") {
+                //Cambiar el alimento al elemento cortado
+            }
         }
     }
 }
