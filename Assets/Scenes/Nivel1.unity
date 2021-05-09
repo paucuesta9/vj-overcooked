@@ -14292,10 +14292,10 @@ MonoBehaviour:
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
   jugador: {fileID: 1668229932}
   panCortado: {fileID: 0}
-  tomateCortado: {fileID: 0}
-  lechugaCortada: {fileID: 0}
-  quesoCortado: {fileID: 0}
-  cebollaCortada: {fileID: 0}
+  tomateCortado: {fileID: 2169207087098277034, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
+  lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
+  quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
+  cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
 --- !u!1001 &1498290726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20024,10 +20024,10 @@ MonoBehaviour:
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
   jugador: {fileID: 1668229932}
   panCortado: {fileID: 0}
-  tomateCortado: {fileID: 0}
-  lechugaCortada: {fileID: 0}
-  quesoCortado: {fileID: 0}
-  cebollaCortada: {fileID: 0}
+  tomateCortado: {fileID: 2169207087098277034, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
+  lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
+  quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
+  cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
 --- !u!4 &2015837609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ced714d74a56004da9d77b9cc694270, type: 3}
