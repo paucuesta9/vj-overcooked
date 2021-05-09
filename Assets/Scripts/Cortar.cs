@@ -7,6 +7,7 @@ public class Cortar : MonoBehaviour
 {
     float progreso;
     public bool active, canCut;
+    public int typeCuchillo;
 
     public GameObject progressBarModel;
     GameObject progresBar;
@@ -27,7 +28,18 @@ public class Cortar : MonoBehaviour
             foreach (Transform hijo in transform)
             {
                 if (hijo.gameObject.tag == "Comida") {
-                    if (!hijo.gameObject.name.Contains("cortado") && !hijo.gameObject.name.Contains("cortada")) canCut = true;
+                    if (!hijo.gameObject.name.Contains("cortado") && !hijo.gameObject.name.Contains("cortada")) {
+                        if (typeCuchillo == 0) {
+                            if (!hijo.gameObject.name.Contains("Pan") && !hijo.gameObject.name.Contains("Pizza")) canCut = true;
+                            else canCut = false;
+                        } else if (typeCuchillo == 1) {
+                            if (hijo.gameObject.name.Contains("Pan")) canCut = true;
+                            else canCut = false;
+                        } else {
+                            if (hijo.gameObject.name.Contains("Pizza")) canCut = true;
+                            else canCut = false;
+                        }
+                    }
                     else canCut = false;
                 }
             }
