@@ -167,6 +167,9 @@ public class CogerObjeto : MonoBehaviour
         else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja") {
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
                 EncimeraAux = other.gameObject;
+        }
+        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject)) {
+            other.gameObject.GetComponent<Cortar>().active = true;
         }        
     }
 
@@ -201,6 +204,9 @@ public class CogerObjeto : MonoBehaviour
         if (other.gameObject == EncimeraAux) {
             EncimeraAux = null;
         }
+        if (tag == "Encimera" && hasEncimeraATabla(other.gameObject)) {
+            other.gameObject.GetComponent<Cortar>().active = false;
+        }     
     }
 
     private bool hasEncimeraAnObject(GameObject encimera)
@@ -208,6 +214,18 @@ public class CogerObjeto : MonoBehaviour
         foreach (Transform hijo in encimera.transform)
         {
             if (hijo.tag == "Utensilio" || hijo.tag == "Platos" || hijo.tag == "Plato" || hijo.tag == "Comida")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool hasEncimeraATabla(GameObject encimera)
+    {
+        foreach (Transform hijo in encimera.transform)
+        {
+            if (hijo.tag == "Tabla")
             {
                 return true;
             }
