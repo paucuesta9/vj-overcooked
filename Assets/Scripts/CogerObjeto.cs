@@ -80,8 +80,26 @@ public class CogerObjeto : MonoBehaviour
             if (hasEncimera)
             {
                 hasItem = false;
-                utensilio.Object.transform.parent = Encimera.transform;
-                utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
+                if (hasEncimeraAnObject(Encimera))
+                {
+                    foreach (Transform hijo in Encimera.transform)
+                    {
+                        if (hijo.tag == "Plato")
+                        {
+                            int numItems = hijo.childCount;
+                            utensilio.Object.transform.parent = hijo;
+                            utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                            hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    utensilio.Object.transform.parent = Encimera.transform;
+                    utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
+
+                }
                 if (utensilio.Object.name.Contains("Pan"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
@@ -141,6 +159,7 @@ public class CogerObjeto : MonoBehaviour
             utensilioAux = new Utensilio(other.gameObject, new Color(1, 1, 1));
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         var tag = other.gameObject.tag;
@@ -184,6 +203,18 @@ public class CogerObjeto : MonoBehaviour
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
             {
                 paintFornitures(other.gameObject);
+            }
+
+        }
+        else if (tag == "Encimera" && utensilio.Object != null && utensilio.Object.tag == "Comida" && hasEncimeraAnObject(other.gameObject))
+        {
+            foreach (Transform hijo in other.gameObject.transform)
+            {
+                if (hijo.tag == "Plato")
+                {
+                    paintFornitures(other.gameObject);
+                    break;
+                }
             }
         }
         else if (tag == "Caja" && hasEncimera == false)

@@ -11051,18 +11051,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7735227285407250788, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
   m_PrefabInstance: {fileID: 2410621034763498128}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1175338032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175338031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54970157ed3a5e24eaac10a646418bbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1175338033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11074,8 +11062,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27509636, y: 0.31, z: 0.07726633}
+  m_Size: {x: 0.27509636, y: 0.31, z: 0.17}
   m_Center: {x: -0.017816126, y: -0.05713595, z: -0.037141036}
+--- !u!114 &1175338035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175338031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54970157ed3a5e24eaac10a646418bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  jugador: {fileID: 1668229932}
 --- !u!1 &1175869966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b387c1aa9e486074082cad0881723d9a, type: 3}
@@ -22054,6 +22057,10 @@ PrefabInstance:
     - target: {fileID: 1898148064000972720, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
       propertyPath: m_Name
       value: horno_pica
+      objectReference: {fileID: 0}
+    - target: {fileID: 2410621035095139491, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6435952829214606813, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
       propertyPath: m_RootOrder
