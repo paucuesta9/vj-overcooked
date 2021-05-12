@@ -56,6 +56,8 @@ public class CogerObjeto : MonoBehaviour
         {
             if (Input.GetKeyDown("e") && hasItem == false)
             {
+                Debug.Log(utensilio.Object.transform.parent.name + " es tu padre");
+                if (utensilio.Object.transform.parent.tag == "Fogon") utensilio.Object.transform.parent.GetComponent<ControlFogones>().changeStateFire();
                 hasItem = true;
                 utensilio.Object.transform.position = destino.transform.position;
                 utensilio.Object.transform.parent = destino.transform;
@@ -70,7 +72,6 @@ public class CogerObjeto : MonoBehaviour
                 if (utensilio.Object.tag == "Plato")
                 {
                     utensilio.Object.GetComponent<Collider>().enabled = true;
-
                 }
             }
         }
@@ -100,6 +101,7 @@ public class CogerObjeto : MonoBehaviour
                             break;
                         }
                     }
+                if (utensilio.Object.transform.parent.tag == "Fogon") Encimera.GetComponent<ControlFogones>().changeStateFire();
             }
         }
     }
@@ -107,7 +109,12 @@ public class CogerObjeto : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var tag = other.gameObject.tag;
-        if (!hasItem && !canpickup)
+        if (tag == "Pica" && utensilio.Object != null && utensilio.Object.name.Contains("olla") && utensilio.Object.transform.GetChild(0).gameObject.activeSelf == false)
+        {
+            Debug.Log("ME PINTARON PAJARITOS");
+            other.gameObject.GetComponent<LlenarOlla>().active = true;
+        }
+        else if (!hasItem && !canpickup)
         {
             if (tag == "Utensilio" || tag == "Plato" || tag == "Comida")
             {
@@ -137,7 +144,8 @@ public class CogerObjeto : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var tag = other.gameObject.tag;
-        if (other.gameObject == utensilio.Object || ((tag == "Platos") && (other.gameObject == utensilio.Object.transform.parent.gameObject)))
+        if (tag == "Pica") other.gameObject.GetComponent<LlenarOlla>().active = false;
+        else if (other.gameObject == utensilio.Object || ((tag == "Platos") && (other.gameObject == utensilio.Object.transform.parent.gameObject)))
         {
             canpickup = false;
             if (tag == "Utensilio" || tag == "Plato" || tag == "Comida")
@@ -160,7 +168,7 @@ public class CogerObjeto : MonoBehaviour
         {
             utensilioAux.Object = null;
         }
-        if (utensilioAux.Object != null)
+        if (utensilioAux.Object != null && tag != "Pica")
         {
             OnTriggerEnter(utensilioAux.Object.GetComponent<Collider>());
         }
@@ -296,6 +304,11 @@ public class CogerObjeto : MonoBehaviour
                     }
                 }
         }
+    }
+
+    public void llenarOlla()
+    {
+        utensilio.Object.transform.GetChild(0).gameObject.SetActive(true);
     }
 }
 
