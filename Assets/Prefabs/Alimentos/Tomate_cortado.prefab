@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8847110643453791374}
   - component: {fileID: 4057201975213228249}
-  - component: {fileID: 3734992840654707352}
-  - component: {fileID: 8599135426170553430}
+  - component: {fileID: 1412615561581498517}
+  - component: {fileID: 7158189238583884112}
   m_Layer: 0
   m_Name: Tomate_cortado
   m_TagString: Comida
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2169207087098277034}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.148}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -6.095533, y: 8.508295, z: 31.679926}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,16 +45,8 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.99, y: 4.65, z: 4.96}
-  m_Center: {x: 4.41, y: 1.78, z: 1.64}
---- !u!33 &3734992840654707352
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2169207087098277034}
-  m_Mesh: {fileID: 4139870077181741691, guid: 251e06fd045d1bd46a61716c3ae102df, type: 3}
---- !u!23 &8599135426170553430
+  m_Center: {x: 0.01, y: 0.12, z: 0.22}
+--- !u!23 &1412615561581498517
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,3 +87,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &7158189238583884112
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169207087098277034}
+  m_Mesh: {fileID: 4139870077181741691, guid: 251e06fd045d1bd46a61716c3ae102df, type: 3}

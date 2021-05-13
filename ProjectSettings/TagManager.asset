@@ -15,6 +15,7 @@ TagManager:
   - Pizza
   - General
   - Pan
+  - ProgressBar
   layers:
   - Default
   - TransparentFX
