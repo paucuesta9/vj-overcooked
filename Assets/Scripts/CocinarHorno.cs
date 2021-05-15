@@ -27,7 +27,7 @@ public class CocinarHorno : MonoBehaviour
         {
             if (progreso == 0)
             {
-                progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
+                progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, -1), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);
             }
             progreso += 1.0f / waitTime * Time.deltaTime;
