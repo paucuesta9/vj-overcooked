@@ -224,7 +224,7 @@ public class CogerObjeto : MonoBehaviour
         var tag = other.gameObject.tag;
         if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
-            if (utensilio.Object.tag != "Comida")
+            if (utensilio.Object.tag == "Comida")
             {
                 paintFornitures(other.gameObject);
             }
@@ -239,6 +239,13 @@ public class CogerObjeto : MonoBehaviour
                     paintFornitures(other.gameObject);
                     break;
                 }
+            }
+        }
+        else if (tag == "Horno" && hasEncimera == false)
+        {
+            if (utensilio.Object.tag == "Comida")
+            {
+                paintFornitures(other.gameObject);
             }
         }
         else if (tag == "Caja" && hasEncimera == false)
@@ -268,7 +275,7 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Exit " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja") && other.gameObject == Encimera)
+        if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;
@@ -284,6 +291,18 @@ public class CogerObjeto : MonoBehaviour
                     if (hijo.name != "Object" && hijo.tag != "Utensilio" && hijo.name != "Fuego" && !hijo.name.Contains("ProgressBar"))
                     {
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    }
+                }
+            }
+            else if (tag == "Horno")
+            {
+                Material[] materials = other.gameObject.GetComponent<MeshRenderer>().materials;
+                foreach (Material material in materials)
+                {
+                    if (material.color == colorToPaint)
+                    {
+                        material.color = new Color(0, 0, 0);
+                        break;
                     }
                 }
             }
@@ -356,6 +375,20 @@ public class CogerObjeto : MonoBehaviour
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
                     }
                 }
+            else if (tag == "Horno")
+            {
+                Material[] materials = mueble.GetComponent<MeshRenderer>().materials;
+                foreach (Material material in materials)
+                {
+                    Debug.Log("CORRE CORRE CORRE CORZÓN");
+                    if (material.color == new Color(0, 0, 0))
+                    {
+                        material.color = colorToPaint;
+                        break;
+                    }
+                }
+
+            }
         }
     }
 
