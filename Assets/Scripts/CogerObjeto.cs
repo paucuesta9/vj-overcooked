@@ -52,15 +52,24 @@ public class CogerObjeto : MonoBehaviour
             }
             else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
-        else if (Input.GetKeyDown("return") && utensilio.Object.transform.parent.gameObject.tag == "Fogon")
+        else if (Input.GetKeyDown("return"))
         {
-            if (canpickup && utensilio.Object.name.Contains("Olla") && utensilio.Object.transform.GetChild(0).gameObject.activeSelf)
+            if (utensilio.Object.transform.parent.gameObject.tag == "Fogon")
             {
-                utensilio.Object.transform.parent.gameObject.GetComponent<CocinarOlla>().active = true;
+                if (canpickup && utensilio.Object.name.Contains("Olla") && utensilio.Object.transform.GetChild(0).gameObject.activeSelf)
+                {
+                    utensilio.Object.transform.parent.gameObject.GetComponent<CocinarOlla>().active = true;
+                }
+                else if (canpickup && utensilio.Object.name.Contains("Sarten"))
+                {
+                    if (utensilio.Object.transform.childCount > 0)
+                        utensilio.Object.transform.parent.gameObject.GetComponent<CocinarSarten>().active = true;
+                }
             }
-            else if (canpickup && utensilio.Object.name.Contains("Sarten"))
+            else if (hasEncimera && Encimera.tag == "Horno")
             {
-                utensilio.Object.transform.parent.gameObject.GetComponent<CocinarSarten>().active = true;
+                if (Encimera.transform.childCount > 0)
+                    Encimera.GetComponent<CocinarHorno>().active = true;
             }
         }
         else if (canpickup == true)
@@ -98,17 +107,27 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = false;
                 if (hasEncimeraAnObject(Encimera))
                 {
-                    foreach (Transform hijo in Encimera.transform)
+                    if (Encimera.tag == "Horno")
                     {
-                        if (hijo.tag == "Plato")
+                        int numItems = Encimera.transform.childCount;
+                        utensilio.Object.transform.parent = Encimera.transform;
+                        utensilio.Object.transform.position = Encimera.transform.Find("Object").position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                    }
+                    else
+                    {
+                        foreach (Transform hijo in Encimera.transform)
                         {
-                            int numItems = hijo.childCount;
-                            utensilio.Object.transform.parent = hijo;
-                            utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                            hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
-                            break;
+                            if (hijo.tag == "Plato")
+                            {
+                                int numItems = hijo.childCount;
+                                utensilio.Object.transform.parent = hijo;
+                                utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
+                                break;
+                            }
                         }
                     }
+
                 }
                 else
                 {
@@ -224,7 +243,7 @@ public class CogerObjeto : MonoBehaviour
         var tag = other.gameObject.tag;
         if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
-            if (utensilio.Object.tag != "Comida")
+            if (tag != "Fogon" || utensilio.Object.tag != "Comida")
             {
                 paintFornitures(other.gameObject);
             }
@@ -239,6 +258,13 @@ public class CogerObjeto : MonoBehaviour
                     paintFornitures(other.gameObject);
                     break;
                 }
+            }
+        }
+        else if (tag == "Horno" && hasEncimera == false)
+        {
+            if (utensilio.Object.tag == "Comida")
+            {
+                paintFornitures(other.gameObject);
             }
         }
         else if (tag == "Caja" && hasEncimera == false)
@@ -268,7 +294,7 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Exit " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja") && other.gameObject == Encimera)
+        if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;
@@ -284,6 +310,18 @@ public class CogerObjeto : MonoBehaviour
                     if (hijo.name != "Object" && hijo.tag != "Utensilio" && hijo.name != "Fuego" && !hijo.name.Contains("ProgressBar"))
                     {
                         hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    }
+                }
+            }
+            else if (tag == "Horno")
+            {
+                Material[] materials = other.gameObject.GetComponent<MeshRenderer>().materials;
+                foreach (Material material in materials)
+                {
+                    if (material.color == colorToPaint)
+                    {
+                        material.color = new Color(0, 0, 0);
+                        break;
                     }
                 }
             }
@@ -356,6 +394,20 @@ public class CogerObjeto : MonoBehaviour
                         hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
                     }
                 }
+            else if (tag == "Horno")
+            {
+                Material[] materials = mueble.GetComponent<MeshRenderer>().materials;
+                foreach (Material material in materials)
+                {
+                    Debug.Log("CORRE CORRE CORRE CORZÓN");
+                    if (material.color == new Color(0, 0, 0))
+                    {
+                        material.color = colorToPaint;
+                        break;
+                    }
+                }
+
+            }
         }
     }
 
