@@ -4664,7 +4664,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2656482243468067242, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
 --- !u!1001 &493353168
 PrefabInstance:
@@ -4982,7 +4983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5409309b199b284cb15da54e2247980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destino: {fileID: 1254292392}
+  destino: {fileID: 904717446}
   canpickup: 0
 --- !u!4 &558860479 stripped
 Transform:
@@ -5855,6 +5856,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: a8be870e200f0824f9fe64aad44b3f6e, type: 3}
       propertyPath: m_Name
       value: '[foliage] Square grass 2x2m (15)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a8be870e200f0824f9fe64aad44b3f6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a8be870e200f0824f9fe64aad44b3f6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8be870e200f0824f9fe64aad44b3f6e, type: 3}
       propertyPath: m_RootOrder
@@ -7324,6 +7333,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c249afac4fcfed4a8b47204dc3c9485, type: 3}
+--- !u!1 &904717446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904717447}
+  m_Layer: 0
+  m_Name: ObjetoCogido
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904717447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904717446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0782, z: 0.044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 558860479}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &916700050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9367,36 +9406,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 277ab932a4ce1f3458d9cf9351f4ad6c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08db43b8632203c47a096f9e1c5a3001, type: 3}
---- !u!1 &1254292392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254292393}
-  m_Layer: 0
-  m_Name: Destino
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1254292393
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254292392}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0782, z: 0.044}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 558860479}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1255688478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7012456645192912880, guid: 6c249afac4fcfed4a8b47204dc3c9485, type: 3}
@@ -11946,11 +11955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3864850380951138803, guid: 8f8f68de29deca643ab8873b6a16a351, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09341049
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3864850380951138803, guid: 8f8f68de29deca643ab8873b6a16a351, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.022937775
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3864850380951138803, guid: 8f8f68de29deca643ab8873b6a16a351, type: 3}
       propertyPath: m_LocalPosition.z

@@ -16,6 +16,7 @@ TagManager:
   - General
   - Pan
   - ProgressBar
+  - Pica
   layers:
   - Default
   - TransparentFX

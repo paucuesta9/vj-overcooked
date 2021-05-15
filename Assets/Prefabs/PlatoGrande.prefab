@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5039547622336958592}
   - component: {fileID: 7067527244085716042}
   - component: {fileID: 4298226710363736348}
+  - component: {fileID: 7709323715444030949}
   m_Layer: 0
   m_Name: PlatoGrande
   m_TagString: Plato
@@ -95,3 +96,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.018, z: 0.01}
   m_Center: {x: -0.0000000048894435, y: -1.4571677e-16, z: 0.00017643825}
+--- !u!114 &7709323715444030949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662699925273104276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35f9eddfb5b698419bc804c57536ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
