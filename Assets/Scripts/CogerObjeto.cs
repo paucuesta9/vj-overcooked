@@ -243,7 +243,7 @@ public class CogerObjeto : MonoBehaviour
         var tag = other.gameObject.tag;
         if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
-            if (utensilio.Object.tag == "Comida")
+            if (tag != "Fogon" || utensilio.Object.tag != "Comida")
             {
                 paintFornitures(other.gameObject);
             }

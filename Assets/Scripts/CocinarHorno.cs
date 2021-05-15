@@ -10,7 +10,7 @@ public class CocinarHorno : MonoBehaviour
 
     public GameObject progressBarModel;
     GameObject progresBar;
-    float waitTime = 15.0f;
+    float waitTime = 20.0f;
 
     public GameObject jugador;
 
@@ -51,7 +51,17 @@ public class CocinarHorno : MonoBehaviour
     {
         foreach (Transform hijo in transform)
         {
-            hijo.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(154, 57, 21, 255);
+            if (hijo.gameObject.name != "Object" && hijo.gameObject.tag != "ProgressBar")
+            {
+                if (hijo.gameObject.name.Contains("Pan"))
+                {
+                    foreach (Transform trozoPan in hijo)
+                    {
+                        trozoPan.GetComponent<MeshRenderer>().material.color = new Color32(100, 10, 10, 255);
+                    }
+                }
+                else hijo.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(10, 10, 10, 255);
+            }
         }
     }
 }
