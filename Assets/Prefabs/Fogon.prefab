@@ -446,6 +446,8 @@ GameObject:
   - component: {fileID: 5805233103757529737}
   - component: {fileID: 1393228706620558347}
   - component: {fileID: -6539670968849301837}
+  - component: {fileID: 7989878269389903968}
+  - component: {fileID: 501549367757080835}
   m_Layer: 0
   m_Name: Fogon
   m_TagString: Fogon
@@ -503,6 +505,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c6e03ce62d11f4b8568fd3d8ea83d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7989878269389903968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107657810043831057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e014c86d3d66745a62f54b4f8da14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+--- !u!114 &501549367757080835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107657810043831057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fc4d2bc609e224498c07a5b0c152fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
 --- !u!1 &4743941079858315577
 GameObject:
   m_ObjectHideFlags: 0
