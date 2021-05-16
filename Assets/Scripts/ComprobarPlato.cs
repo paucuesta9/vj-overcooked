@@ -18,7 +18,7 @@ public class ComprobarPlato : MonoBehaviour
         // Pan --> P
         // Pimientos --> PI
         // Queso --> Q
-        // Carne + Pan + Cebolla cocinado --> H
+        // Pan + Carne + Cebolla cocinado + Queso --> H
         // Sopa de lechuga --> S
         // Patatas --> PA
         // Pizza1 --> PZ1
