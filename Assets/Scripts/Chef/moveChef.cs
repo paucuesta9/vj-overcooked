@@ -20,7 +20,7 @@ public class moveChef : MonoBehaviour
 
     void Update()
     {
-        vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, body.velocity.y, Input.GetAxis("Vertical") * 10f);
+        vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, -1.0f, Input.GetAxis("Vertical") * 10f);
         transform.LookAt(transform.position + new Vector3(vectorPlayer.x, 0, vectorPlayer.z));
     }
 

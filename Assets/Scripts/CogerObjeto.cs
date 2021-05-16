@@ -281,7 +281,7 @@ public class CogerObjeto : MonoBehaviour
         }
         else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja")
         {
-            if (utensilio.Object.tag != "Comida")
+            if (hasItem && utensilio.Object.tag != "Comida")
                 EncimeraAux = other.gameObject;
         }
         if (tag == "Encimera" && hasEncimeraATabla(other.gameObject, 2))
@@ -301,7 +301,10 @@ public class CogerObjeto : MonoBehaviour
             if (tag == "Encimera")
             {
                 if (!hasEncimeraATabla(other.gameObject, 0))
-                    other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                {
+                    if (other.gameObject.name.Contains("Esquina")) other.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    else other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                }
             }
             else if (tag == "Fogon")
             {
