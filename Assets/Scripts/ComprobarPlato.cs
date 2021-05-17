@@ -23,8 +23,8 @@ public class ComprobarPlato : MonoBehaviour
         platos[2] = new string[] { "pan_c", "carne_queso_s" }; // Cheeseburguer
         platos[3] = new string[] { "carne_queso_cebolla_s", "tomate_c", "lechuga_c", "pan_c" }; // Hamburguesa completa
         platos[4] = new string[] { "carne_s", "patata_o", "tomate_c" }; // Carne al plato
-        platos[5] = new string[] { "pizza_m" }; // Pizza margarita
-        platos[6] = new string[] { "pizza_c" }; // Pizza completa
+        platos[5] = new string[] { "pizza_m_h" }; // Pizza margarita
+        platos[6] = new string[] { "pizza_c_h" }; // Pizza completa
     }
 
     // Update is called once per frame
