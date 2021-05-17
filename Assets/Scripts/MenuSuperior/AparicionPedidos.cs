@@ -28,6 +28,7 @@ public class AparicionPedidos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         time += Time.deltaTime;
         if (Mathf.Floor(time / 10) == 1) {
             time = 0;
@@ -39,5 +40,6 @@ public class AparicionPedidos : MonoBehaviour
             // progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
             // progresBar.transform.SetParent(transform);
         }
+        */
     }
 }
