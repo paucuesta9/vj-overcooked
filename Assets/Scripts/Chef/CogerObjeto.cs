@@ -43,7 +43,7 @@ public class CogerObjeto : MonoBehaviour
             Debug.Log("DALE A TU CUERPO");
             utensilio.Object = (GameObject)Instantiate(Encimera.GetComponent<PropiedadCaja>().alimento, destino.transform.position, Encimera.GetComponent<PropiedadCaja>().alimento.transform.rotation);
             utensilio.Object.transform.parent = destino.transform;
-            if (utensilio.Object.name.Contains("Pan"))
+            if (utensilio.Object.name.Contains("an"))
             {
                 foreach (Transform hijo in utensilio.Object.transform)
                 {
@@ -86,7 +86,7 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = true;
                 utensilio.Object.transform.position = destino.transform.position;
                 utensilio.Object.transform.parent = destino.transform;
-                if (utensilio.Object.name.Contains("Pan"))
+                if (utensilio.Object.name.Contains("an"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
@@ -113,6 +113,20 @@ public class CogerObjeto : MonoBehaviour
                         utensilio.Object.transform.parent = Encimera.transform;
                         utensilio.Object.transform.position = Encimera.transform.Find("Object").position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
                     }
+                    else if (Encimera.tag == "Fogon")
+                    {
+                        foreach (Transform hijo in Encimera.transform)
+                        {
+                            if ((hijo.name.Contains("Olla") && hijo.GetChild(0).gameObject.activeSelf) || hijo.name.Contains("Sarten"))
+                            {
+                                int numItems = hijo.childCount;
+                                if (hijo.name.Contains("Olla")) numItems -= 2;
+                                else numItems--;
+                                utensilio.Object.transform.parent = hijo;
+                                utensilio.Object.transform.position = hijo.Find("Object").position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                            }
+                        }
+                    }
                     else
                     {
                         foreach (Transform hijo in Encimera.transform)
@@ -120,10 +134,43 @@ public class CogerObjeto : MonoBehaviour
                             if (hijo.tag == "Plato")
                             {
                                 int numItems = hijo.childCount;
-                                utensilio.Object.transform.parent = hijo;
-                                utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                                hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
-                                break;
+                                if (utensilio.Object.name.Contains("Olla"))
+                                {
+                                    hasItem = true;
+                                    foreach (Transform alimento in utensilio.Object.transform)
+                                    {
+                                        if (alimento.name != "Agua" && alimento.name != "Object")
+                                        {
+                                            alimento.parent = utensilio.Object.transform;
+                                            alimento.position = utensilio.Object.transform.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
+                                        }
+                                    }
+                                    break;
+                                }
+                                else if (utensilio.Object.name.Contains("Sarten"))
+                                {
+                                    hasItem = true;
+                                    foreach (Transform alimento in utensilio.Object.transform)
+                                    {
+                                        if (alimento.name != "Object")
+                                        {
+                                            alimento.parent = hijo;
+                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
+                                        }
+                                    }
+                                    break;
+                                }
+                                else
+                                {
+                                    utensilio.Object.transform.parent = hijo;
+                                    utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                    hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
+                                    break;
+                                }
+
+
                             }
                         }
                     }
@@ -138,7 +185,7 @@ public class CogerObjeto : MonoBehaviour
                         //utensilio.Object.transform.rotation = Quaternion.Euler(-90, 0, 0);
                     }
                 }
-                if (utensilio.Object.name.Contains("Pan"))
+                if (utensilio.Object.name.Contains("an"))
                 {
                     foreach (Transform hijo in utensilio.Object.transform)
                     {
@@ -173,18 +220,35 @@ public class CogerObjeto : MonoBehaviour
         }
         else if (!hasItem && !canpickup)
         {
-            if (tag == "Utensilio" || tag == "Plato" || tag == "Comida")
+            if (tag == "Comida")
+            {
+                if (other.gameObject.transform.parent.tag != "Plato" && other.gameObject.transform.parent.tag != "Utensilio")
+                {
+                    canpickup = true;
+                    utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
+                    if (utensilio.Object.name.Contains("an"))
+                    {
+                        foreach (Transform hijo in utensilio.Object.transform)
+                        {
+                            if (utensilio.Object.name.Contains("an"))
+                            {
+                                foreach (Transform hijo2 in hijo)
+                                {
+                                    hijo2.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                                }
+                            }
+                            else
+                                hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                        }
+                    }
+                    else utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                }
+            }
+            if (tag == "Utensilio" || tag == "Plato")
             {
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
-                if (utensilio.Object.name.Contains("Pan"))
-                {
-                    foreach (Transform hijo in utensilio.Object.transform)
-                    {
-                        hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
-                    }
-                }
-                else utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
             }
             else if (tag == "Platos")
             {
@@ -212,11 +276,19 @@ public class CogerObjeto : MonoBehaviour
             canpickup = false;
             if (tag == "Utensilio" || tag == "Plato" || tag == "Comida")
             {
-                if (other.gameObject.name.Contains("Pan"))
+                if (other.gameObject.name.Contains("an"))
                 {
                     foreach (Transform hijo in other.gameObject.transform)
                     {
-                        hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                        if (other.gameObject.name.Contains("an"))
+                        {
+                            foreach (Transform hijo2 in hijo)
+                            {
+                                hijo2.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                            }
+                        }
+                        else
+                            hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                     }
                 }
                 else other.gameObject.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
@@ -249,7 +321,7 @@ public class CogerObjeto : MonoBehaviour
             }
 
         }
-        else if (tag == "Encimera" && utensilio.Object != null && utensilio.Object.tag == "Comida" && hasEncimeraAnObject(other.gameObject))
+        else if (tag == "Encimera" && hasEncimeraAnObject(other.gameObject))
         {
             foreach (Transform hijo in other.gameObject.transform)
             {
@@ -257,6 +329,22 @@ public class CogerObjeto : MonoBehaviour
                 {
                     paintFornitures(other.gameObject);
                     break;
+                }
+            }
+        }
+        else if (tag == "Fogon" && hasItem && utensilio.Object.tag == "Comida" && hasEncimera == false)
+        {
+            foreach (Transform hijo in other.transform)
+            {
+                if ((hijo.gameObject.name.Contains("Olla") && hijo.gameObject.transform.GetChild(0).gameObject.activeSelf) || hijo.gameObject.name.Contains("Sarten"))
+                {
+                    if ((hijo.gameObject.name.Contains("Olla") && !utensilio.Object.name.Contains("Carne") && !utensilio.Object.name.Contains("Cebolla") && !utensilio.Object.name.Contains("Pan") && utensilio.Object.name.Contains("_c")) ||
+                        (hijo.gameObject.name.Contains("Sarten") && !utensilio.Object.name.Contains("an") && !utensilio.Object.name.Contains("Lechuga") && !utensilio.Object.name.Contains("Tomate") && (utensilio.Object.name.Contains("_c") || utensilio.Object.name.Contains("Carne"))))
+                    {
+                        hasEncimera = true;
+                        Encimera = other.gameObject;
+                        break;
+                    }
                 }
             }
         }

@@ -52,7 +52,6 @@ public class AparicionPedidos : MonoBehaviour
                 i++;
             }
         }
-        
     }
 
     // eliminar cartel

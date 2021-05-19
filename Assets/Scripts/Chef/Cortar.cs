@@ -35,7 +35,7 @@ public class Cortar : MonoBehaviour
             {
                 if (hijo.gameObject.tag == "Comida")
                 {
-                    if (!hijo.gameObject.name.Contains("cortado") && !hijo.gameObject.name.Contains("cortada"))
+                    if (!hijo.gameObject.name.Contains("_"))
                     {
                         if (typeCuchillo == 0)
                         {
@@ -99,26 +99,38 @@ public class Cortar : MonoBehaviour
                 {
                     newAlimento = (GameObject)Instantiate(panCortado, pos, panCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "pan_c";
                 }
                 if (nombre.Contains("Queso"))
                 {
                     newAlimento = (GameObject)Instantiate(quesoCortado, pos, quesoCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "queso_c";
                 }
                 if (nombre.Contains("Tomate"))
                 {
                     newAlimento = (GameObject)Instantiate(tomateCortado, pos, tomateCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "tomate_c";
                 }
                 if (nombre.Contains("Lechuga"))
                 {
                     newAlimento = (GameObject)Instantiate(lechugaCortada, pos, lechugaCortada.transform.rotation);
                     newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "lechuga_c";
                 }
                 if (nombre.Contains("Cebolla"))
                 {
                     newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
                     newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "cebolla_c";
+                }
+                if (nombre.Contains("Pimiento"))
+                {
+                    //TODO: Cambiar modelo a pimiento cortado
+                    newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
+                    newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "pimiento_c";
                 }
                 break;
             }

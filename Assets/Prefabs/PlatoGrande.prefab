@@ -108,3 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35f9eddfb5b698419bc804c57536ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platosFinalizados:
+  - {fileID: 6491634340987429611, guid: 1b2baeee7bf26d04db2ce4d84e5af057, type: 3}
+  - {fileID: 6431909999034002766, guid: 34bdc35d36973eb4a96678be2d576d9e, type: 3}
+  - {fileID: 6983494925623983917, guid: 1564606107ec0134a99bd2f1a9160920, type: 3}
+  - {fileID: 6672469782034750548, guid: 4429d1d229a11bf49b11440ab8d416ef, type: 3}
+  - {fileID: 1058397006201714821, guid: 8c1eddae413d4274186a8e0a5afb976a, type: 3}
+  - {fileID: 7509422620108048860, guid: 9bd66d3a3ceef094fbf6d681d2cd3e9f, type: 3}
+  - {fileID: 2046523405939124555, guid: 43727f1cf96a6f149b1e202bbc9544ac, type: 3}
