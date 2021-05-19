@@ -16,7 +16,7 @@ public class AparicionPedidos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 0;
+        time = 60;
         i = 0;
     }
 
@@ -52,6 +52,11 @@ public class AparicionPedidos : MonoBehaviour
                 i++;
             }
         }
+        // if () {
+        //     Destroy(cartelesPedidos)
+
+        // }
+        
     }
 
     // eliminar cartel

@@ -8,11 +8,15 @@ public class CocinarOlla : MonoBehaviour
     float progreso;
     public bool active;
 
+    public GameObject fireModel;
+    GameObject fire;
     public GameObject progressBarModel;
     GameObject progresBar;
     public GameObject ensaladaPatatasModel;
     GameObject newMeal;
     float waitTime = 15.0f;
+    bool hayFuego;
+    
 
     public GameObject jugador;
 
@@ -20,6 +24,7 @@ public class CocinarOlla : MonoBehaviour
     {
         progreso = 0;
         active = false;
+        hayFuego = false;
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class CocinarOlla : MonoBehaviour
         {
             if (progreso == 0)
             {
+                hayFuego = false;
                 progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);
                 foreach (Transform hijo in transform)
@@ -109,7 +115,12 @@ public class CocinarOlla : MonoBehaviour
                         alimento.name.Replace("_o", "_q");
                     }
                 }
+                if (!hayFuego) {
+                    fire = (GameObject)Instantiate(fireModel, hijo.position, fireModel.transform.rotation);
+                    hayFuego = true;
+                }
             }
         }
+        
     }
 }

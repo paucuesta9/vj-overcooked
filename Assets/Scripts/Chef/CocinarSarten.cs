@@ -11,10 +11,15 @@ public class CocinarSarten : MonoBehaviour
     public GameObject progressBarModel;
     GameObject progresBar;
 
+    public GameObject fireModel;
+    GameObject fire;
+    bool hayFuego;
+
     public GameObject chesseBurguer;
     public GameObject onionChesseBurguer;
     GameObject newMeal;
     float waitTime = 15.0f;
+
 
     public GameObject jugador;
 
@@ -22,6 +27,7 @@ public class CocinarSarten : MonoBehaviour
     {
         progreso = 0;
         active = false;
+        hayFuego = false;
     }
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class CocinarSarten : MonoBehaviour
         {
             if (progreso == 0)
             {
+                hayFuego = false;
                 progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);
                 foreach (Transform hijo in transform)
@@ -122,6 +129,11 @@ public class CocinarSarten : MonoBehaviour
                     }
                 }
             }
+                if (!hayFuego) {
+                    fire = (GameObject)Instantiate(fireModel, hijo.position + new Vector3(0,0.5f,-0.5f), fireModel.transform.rotation);
+                    hayFuego = true;
+                }
         }
+         
     }
 }
