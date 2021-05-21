@@ -18,6 +18,9 @@ TagManager:
   - ProgressBar
   - Pica
   - Horno
+  - Extintor
+  - Pared
+  - Fin
   layers:
   - Default
   - TransparentFX

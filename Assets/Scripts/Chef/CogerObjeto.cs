@@ -176,6 +176,7 @@ public class CogerObjeto : MonoBehaviour
                     }
 
                 }
+                
                 else
                 {
                     utensilio.Object.transform.parent = Encimera.transform;
