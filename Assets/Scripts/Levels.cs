@@ -32,4 +32,9 @@ public class Levels : MonoBehaviour
         levels[++scene].SetActive(true);
         levels[scene].transform.GetChild(0).gameObject.SetActive(false);
     }
+
+    public void level() {
+        string nivel = "Nivel" + scene.ToString();
+        SceneManager.LoadScene(nivel);
+    }
 }

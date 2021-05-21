@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class AparicionPedidos : MonoBehaviour
 {
     public GameObject[] platos;
     public List<int> tipoPlato;
+    public int total;
     float time;
     int i;
+    int platosAcabados = 0;
     GameObject[] cartelesPedidos = new GameObject[8];
 
     // Start is called before the first frame update
@@ -62,9 +65,15 @@ public class AparicionPedidos : MonoBehaviour
                 cartelesPedidos[j].transform.position -= new Vector3(1.55f, 0, 0);
                 cartelesPedidos[j-1] = cartelesPedidos[j];
             }
-            if (num == cartelesPedidos[j].name) {
+            if (num.ToString() == cartelesPedidos[j].name) {
+                platosAcabados++;
                 Destroy(cartelesPedidos[j]);
                 destroyed = 1;
+                GetComponent<Puntuacion>().calcularPoint(10);
+                if (platosAcabados == total) {
+                    GetComponent<Puntuacion>().calcularPoint(25);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
             }
         }
          --i;
