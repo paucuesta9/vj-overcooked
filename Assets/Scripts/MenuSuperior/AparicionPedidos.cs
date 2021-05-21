@@ -24,7 +24,7 @@ public class AparicionPedidos : MonoBehaviour
     void Update()
     {
         Vector3 posicion_anterior;
-        if (tipoPlato.Count != 0) {
+        if (tipoPlato.Count != 0 && i < 6) {
             time += Time.deltaTime;
 
             // Aparece un nuevo pedido cada minuto
@@ -48,16 +48,25 @@ public class AparicionPedidos : MonoBehaviour
                 cartelesPedidos[i].transform.Rotate(62.0f, 0f, 0f, Space.Self);
                 cartelesPedidos[i].transform.localScale = new Vector3(0.008f, 0.008f, 1f);
                 cartelesPedidos[i].transform.SetParent(transform);
+                cartelesPedidos[i].name = plato.ToString();
 
                 i++;
             }
-        }
-        // if () {
-        //     Destroy(cartelesPedidos)
-
-        // }
-        
+        } 
     }
 
-    // eliminar cartel
+    public void finished(int num) {
+        int destroyed = 0;
+        for (int j = 0; j < i; ++j) {
+            if (destroyed == 1) {
+                cartelesPedidos[j].transform.position -= new Vector3(1.55f, 0, 0);
+                cartelesPedidos[j-1] = cartelesPedidos[j];
+            }
+            if (num == cartelesPedidos[j].name) {
+                Destroy(cartelesPedidos[j]);
+                destroyed = 1;
+            }
+        }
+         --i;
+    }
 }

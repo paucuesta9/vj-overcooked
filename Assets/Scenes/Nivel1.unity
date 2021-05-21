@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1150493489}
   m_IndirectSpecularColor: {r: 0.44657755, g: 0.4964127, b: 0.57481825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7a45851d761e98443be717c2ac03eb2b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -16373,9 +16373,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platos:
+  - {fileID: 99089466724411069, guid: 122b86334b2533a4e82e380cc3be8c08, type: 3}
+  - {fileID: 8957030331547217499, guid: 7108bf3edea45bc47a7c0b8d1f771380, type: 3}
   - {fileID: 3869005246874734504, guid: 781c1f6837af31242ae32e645e2de3e7, type: 3}
+  - {fileID: 4703209884864067410, guid: 5a218532f53915f4385edcb4aa1d4a5c, type: 3}
+  - {fileID: 1824502506643737687, guid: 5197169efd96cd04bb3f1bb4b919ca3d, type: 3}
   - {fileID: 1321877575581780397, guid: d174c4b4b7cb303468e0d40a3ca8bd5b, type: 3}
-  tipoPlato: 000000000000000000000000010000000100000001000000
+  - {fileID: 2399842835278383146, guid: 284b7ebb3614e084097dfc990ab8368c, type: 3}
+  tipoPlato: 020000000200000002000000050000000500000005000000
 --- !u!1001 &1656717834
 PrefabInstance:
   m_ObjectHideFlags: 0
