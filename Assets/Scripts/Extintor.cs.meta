@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a718a693efbb5634d90c4bcc2ae66913
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  - nieveCarbonicaModel: {fileID: 4452203289665739065, guid: f69ac93ed44b8854bbe6fee7641bbc0f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

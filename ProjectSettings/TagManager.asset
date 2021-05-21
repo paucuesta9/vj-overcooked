@@ -21,6 +21,7 @@ TagManager:
   - Extintor
   - Pared
   - Fin
+  - Fire
   layers:
   - Default
   - TransparentFX
