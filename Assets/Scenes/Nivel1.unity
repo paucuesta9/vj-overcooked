@@ -16257,6 +16257,7 @@ GameObject:
   - component: {fileID: 1651668902}
   - component: {fileID: 1651668901}
   - component: {fileID: 1651668906}
+  - component: {fileID: 1651668907}
   m_Layer: 5
   m_Name: MenuSuperior
   m_TagString: Untagged
@@ -16276,8 +16277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85e786a1da82d84dbd29124b4192e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 300
+  tiempo: 10
   timer: {fileID: 1835166374}
+  timeUP: {fileID: 2152522522722008003, guid: 0973e56e25e32cb47921e1afaad69ffa, type: 3}
 --- !u!114 &1651668902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16381,6 +16383,21 @@ MonoBehaviour:
   - {fileID: 1321877575581780397, guid: d174c4b4b7cb303468e0d40a3ca8bd5b, type: 3}
   - {fileID: 2399842835278383146, guid: 284b7ebb3614e084097dfc990ab8368c, type: 3}
   tipoPlato: 020000000200000002000000050000000500000005000000
+  total: 0
+--- !u!114 &1651668907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651668900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085c9450090e0624cbe99daa60ece486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntuacion: 0
+  punt: {fileID: 1079439426}
 --- !u!1001 &1656717834
 PrefabInstance:
   m_ObjectHideFlags: 0

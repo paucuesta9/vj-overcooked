@@ -10,15 +10,16 @@ public class Puntuacion : MonoBehaviour
     public Text punt;
     // Start is called before the first frame update
     
-    void Awake() {
-        if (Puntuacion.inst == null) {
-            Puntuacion.inst = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else {
-            Destroy(gameObject);
-        }
-    }
+    // void Awake() {
+    //     if (Puntuacion.inst == null) {
+    //         Puntuacion.inst = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    //     else {
+    //         Destroy(gameObject);
+    //     }
+    // }
+
     void Start()
     {
         punt.text = puntuacion.ToString("0");

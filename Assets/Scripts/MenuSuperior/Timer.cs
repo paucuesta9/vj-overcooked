@@ -7,11 +7,14 @@ public class Timer : MonoBehaviour
 {
     public float tiempo;
     public Text timer;
+    GameObject timesUP;
+    public GameObject timeUP;
+
     // Start is called before the first frame update
     void Start()
     {
         timer.text = tiempo.ToString("00");
-        
+        timesUP = transform.Find("tabla").gameObject;
     }
 
     // Update is called once per frame
@@ -20,7 +23,12 @@ public class Timer : MonoBehaviour
         if (tiempo > 0) {
             timer.text = calcularTiempo();
         }
-
+        else {
+            timesUP.SetActive(true);
+            tiempo = 0;
+            timer.text = "00:00";
+        }
+  
     }
 
     public string calcularTiempo() {
