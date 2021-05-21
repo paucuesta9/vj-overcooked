@@ -22,17 +22,18 @@ public class CogerObjeto : MonoBehaviour
     Color colorToPaint;
 
     GameObject obj;
-    GameObject Encimera, EncimeraAux;
+    GameObject Encimera, EncimeraAux, Pared;
 
     Utensilio utensilio, utensilioAux;
     bool hasItem;
-    bool hasEncimera;
+    bool hasEncimera, dejarExtintor;
     void Start()
     {
         canpickup = false;
         hasItem = false;
         hasEncimera = false;
         colorToPaint = new Color(0, 0, 1);
+        dejarExtintor = false;
     }
 
     void Update()
@@ -206,6 +207,9 @@ public class CogerObjeto : MonoBehaviour
                         }
                     }
                 if (utensilio.Object.transform.parent.tag == "Fogon") Encimera.GetComponent<ControlFogones>().changeStateFire();
+            } else if (dejarExtintor) {
+                utensilio.Object.transform.parent = Pared.transform;
+                utensilio.Object.transform.position = Pared.transform.Find("Object").transform.position;
             }
         }
         if (Input.GetKeyDown("space") && hasItem == true && utensilio.Object.tag == "Extintor") {
@@ -325,7 +329,11 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Enter " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
+        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
+            dejarExtintor = true;
+            Pared = other.gameObject;
+        }
+        else if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
             {
@@ -395,7 +403,10 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Exit " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno") && other.gameObject == Encimera)
+        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
+            dejarExtintor = false;
+        }
+        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;

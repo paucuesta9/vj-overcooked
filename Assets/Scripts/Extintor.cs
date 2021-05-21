@@ -27,7 +27,7 @@ public class Extintor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active) {
+        if (active && value > 0.0f) {
             value -= 1.0f / waitTime * Time.deltaTime;
             progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = value;
             nieveCarbonica = (GameObject)Instantiate(nieveCarbonicaModel, transform.position + new Vector3(0,0, -0.5f), transform.rotation);
