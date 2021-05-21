@@ -208,6 +208,10 @@ public class CogerObjeto : MonoBehaviour
                 if (utensilio.Object.transform.parent.tag == "Fogon") Encimera.GetComponent<ControlFogones>().changeStateFire();
             }
         }
+        if (Input.GetKeyDown("space") && hasItem == true && utensilio.Object.tag == "Extintor") {
+            if (!utensilio.Object.GetComponent<Extintor>().isActive()) utensilio.Object.GetComponent<Extintor>().activate();
+            else utensilio.Object.GetComponent<Extintor>().stop();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
