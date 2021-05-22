@@ -72,7 +72,7 @@ public class CocinarHorno : MonoBehaviour
             progreso += 1.0f / waitTime * Time.deltaTime;
             progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
             if (progreso < 0.75) progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().color = new Color32(252, 219, 3, 255);
-            else if (progreso < 1 && GlobalVariables.canBurn)
+            else if (progreso < 1)
             {
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().color = new Color32(0, 255, 47, 255);
                 foreach (Transform ingrediente in transform)
@@ -86,7 +86,7 @@ public class CocinarHorno : MonoBehaviour
                     }
                 }
             }
-            if (progreso >= 1)
+            if (progreso >= 1 && GlobalVariables.canBurn)
             {
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
                 quemado();

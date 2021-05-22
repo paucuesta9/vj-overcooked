@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CogerObjeto : MonoBehaviour
@@ -41,7 +42,7 @@ public class CogerObjeto : MonoBehaviour
 
     void Update()
     {
-        if (!hasItem && Input.GetKeyDown("N")) {
+        if (!hasItem && Input.GetKeyDown("n")) {
             instiantiateMeal(menuSuperior.GetComponent<AparicionPedidos>().getNextMeal());
         }
         else if (Encimera != null && Encimera.tag == "Caja" && Input.GetKeyDown("e") && hasItem == false)
@@ -545,7 +546,7 @@ public class CogerObjeto : MonoBehaviour
             hasItem = true;
             int num = 0;
             Int32.TryParse(meal, out num);
-            utensilio.Object = (GameObject)Instantiate(platos[num], transform.Find("Object").position, platos[num].transform.rotation);
+            utensilio.Object = (GameObject)Instantiate(platos[num], destino.transform.position, platos[num].transform.rotation);
             utensilio.Object.transform.SetParent(transform);
         }
     }
