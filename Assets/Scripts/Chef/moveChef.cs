@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
+
 public class moveChef : MonoBehaviour
 {
 
     public float speed = 10.0f;
     public float rotationSpeed = 300.0f;
+    public GameObject menuSuperior;
 
     private Rigidbody body;
 
@@ -20,8 +23,11 @@ public class moveChef : MonoBehaviour
 
     void Update()
     {
-        vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, -1.0f, Input.GetAxis("Vertical") * 10f);
-        transform.LookAt(transform.position + new Vector3(vectorPlayer.x, 0, vectorPlayer.z));
+
+        if (menuSuperior.GetComponent<Timer>().getTime() > 0) {
+            vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, -1.0f, Input.GetAxis("Vertical") * 10f);
+            transform.LookAt(transform.position + new Vector3(vectorPlayer.x, 0, vectorPlayer.z));
+        }
     }
 
     void FixedUpdate()
