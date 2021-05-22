@@ -87,8 +87,7 @@ public class CocinarSarten : MonoBehaviour
                     if (hijo.tag == "Utensilio")
                     {
                         foreach (Transform ingrediente in hijo)
-                        {
-                            Debug.Log(ingrediente.name);
+                        {   
                             if (!ingrediente.name.Contains("arne"))
                                 ingrediente.name.Replace("_c", "_s");
                             else if (ingrediente.name.Contains("Carne"))

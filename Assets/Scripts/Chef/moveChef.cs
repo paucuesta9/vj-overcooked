@@ -13,7 +13,7 @@ public class moveChef : MonoBehaviour
 
     private Rigidbody body;
 
-    private Vector3 vectorPlayer;
+    public Vector3 vectorPlayer;
 
     // Start is called before the first frame update
     void Start()
