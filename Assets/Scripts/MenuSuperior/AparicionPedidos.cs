@@ -40,17 +40,18 @@ public class AparicionPedidos : MonoBehaviour
                 int plato = tipoPlato[indexNum];
                 tipoPlato.RemoveAt(indexNum);
 
+                // Se instancia el pedido
+                cartelesPedidos[i] = (GameObject)Instantiate(platos[plato]);
+                cartelesPedidos[i].transform.SetParent(transform);
+                cartelesPedidos[i].transform.rotation = cartelesPedidos[i].transform.parent.rotation;
+                cartelesPedidos[i].transform.localScale = new Vector3(1.5f, 1.5f, 1f);
                 // Se guarda la posición donde aparecerá el pedido
                 if (i > 0) {
-                    posicion_anterior = cartelesPedidos[i-1].transform.position + new Vector3(1.55f, 0, 0);
+                    cartelesPedidos[i].transform.position = cartelesPedidos[i-1].transform.position + new Vector3(1.55f, 0, 0);
                 }
-                else posicion_anterior = new Vector3(-17.0610004f,13.8830004f,33.4840012f);
-
-                // Se instancia el pedido
-                cartelesPedidos[i] = (GameObject)Instantiate(platos[plato], posicion_anterior, platos[plato].transform.rotation);
-                cartelesPedidos[i].transform.Rotate(62.0f, 0f, 0f, Space.Self);
-                cartelesPedidos[i].transform.localScale = new Vector3(0.008f, 0.008f, 1f);
-                cartelesPedidos[i].transform.SetParent(transform);
+                else {
+                     cartelesPedidos[i].transform.position = new Vector3(cartelesPedidos[i].transform.parent.position.x - 4.3f, cartelesPedidos[i].transform.parent.position.y + 20/cartelesPedidos[i].transform.parent.position.y , cartelesPedidos[i].transform.parent.position.z + 60f/cartelesPedidos[i].transform.parent.position.z);
+                }
                 cartelesPedidos[i].name = plato.ToString();
 
                 i++;

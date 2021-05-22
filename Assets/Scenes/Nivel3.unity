@@ -10247,7 +10247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntuacion: 0
-  punt: {fileID: 0}
+  punt: {fileID: 2003402876}
 --- !u!114 &1214188329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10283,7 +10283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo: 300
-  timer: {fileID: 0}
+  timer: {fileID: 725700712}
   timeUP: {fileID: 1574910343}
   exitButton: {fileID: 656685049}
 --- !u!114 &1214188331
