@@ -61,6 +61,7 @@ public class ComprobarPlato : MonoBehaviour
                     }
                     platoTeminado = (GameObject)Instantiate(platosFinalizados[plato], transform.position, platosFinalizados[plato].transform.rotation);
                     platoTeminado.transform.SetParent(transform);
+                    platoTeminado.name = plato.ToString();
                 }
             }
         }

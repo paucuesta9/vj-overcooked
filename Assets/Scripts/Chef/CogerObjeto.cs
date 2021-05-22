@@ -53,6 +53,15 @@ public class CogerObjeto : MonoBehaviour
             }
             else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
+        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && Input.GetKeyDown("e")) {
+            foreach (Transform hijo in Encimera.transform)
+            {
+                if (hijo.name != "Object") {
+                    hijo.position = utensilio.Object.transform.position;
+                    hijo.parent = utensilio.Object.transform;
+                }
+            }
+        }
         else if (Input.GetKeyDown("return"))
         {
             if (utensilio.Object.transform.parent.gameObject.tag == "Fogon")
@@ -103,7 +112,7 @@ public class CogerObjeto : MonoBehaviour
         }
         if (Input.GetKeyDown("q") && hasItem == true)
         {
-            if (hasEncimera)
+            if (hasEncimera && Encimera.tag != "Caja")
             {
                 hasItem = false;
                 if (hasEncimeraAnObject(Encimera))
@@ -170,22 +179,15 @@ public class CogerObjeto : MonoBehaviour
                                     hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
                                     break;
                                 }
-
-
                             }
                         }
                     }
-
                 }
-                
                 else
                 {
                     utensilio.Object.transform.parent = Encimera.transform;
                     utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                    if (utensilio.Object.name.Contains("Olla"))
-                    {
-                        //utensilio.Object.transform.rotation = Quaternion.Euler(-90, 0, 0);
-                    }
+                    if (Encimera.tag == "Fin") Encimera.GetComponent<PlatoTerminado>().finished();
                 }
                 if (utensilio.Object.name.Contains("an"))
                 {
@@ -208,6 +210,7 @@ public class CogerObjeto : MonoBehaviour
                     }
                 if (utensilio.Object.transform.parent.tag == "Fogon") Encimera.GetComponent<ControlFogones>().changeStateFire();
             } else if (dejarExtintor) {
+                hasItem = false;
                 utensilio.Object.transform.parent = Pared.transform;
                 utensilio.Object.transform.position = Pared.transform.Find("Object").transform.position;
             }
@@ -333,7 +336,7 @@ public class CogerObjeto : MonoBehaviour
             dejarExtintor = true;
             Pared = other.gameObject;
         }
-        else if ((tag == "Encimera" || tag == "Fogon") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
+        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Fin") && !hasEncimeraAnObject(other.gameObject) && hasEncimera == false)
         {
             if (tag != "Fogon" || utensilio.Object.tag != "Comida")
             {
@@ -370,7 +373,7 @@ public class CogerObjeto : MonoBehaviour
         }
         else if (tag == "Horno" && hasEncimera == false)
         {
-            if (utensilio.Object.tag == "Comida")
+            if (utensilio.Object.tag == "Comida" || utensilio.Object.tag == "Plato")
             {
                 paintFornitures(other.gameObject);
             }
@@ -388,7 +391,7 @@ public class CogerObjeto : MonoBehaviour
             }
         }
         
-        else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja")
+        else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Fin")
         {
             if (hasItem && utensilio.Object.tag != "Comida")
                 EncimeraAux = other.gameObject;
@@ -406,7 +409,7 @@ public class CogerObjeto : MonoBehaviour
         if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
             dejarExtintor = false;
         }
-        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno") && other.gameObject == Encimera)
+        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno" || tag == "Fin") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;

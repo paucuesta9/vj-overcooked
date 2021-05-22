@@ -59,17 +59,17 @@ public class AparicionPedidos : MonoBehaviour
         } 
     }
 
-    public void finished(int num) {
-        int destroyed = 0;
+    public void finished(string num) {
+        bool destroyed = false;
         for (int j = 0; j < i; ++j) {
-            if (destroyed == 1) {
+            if (destroyed) {
                 cartelesPedidos[j].transform.position -= new Vector3(1.55f, 0, 0);
                 cartelesPedidos[j-1] = cartelesPedidos[j];
             }
-            if (num.ToString() == cartelesPedidos[j].name) {
+            if (num == cartelesPedidos[j].name) {
                 platosAcabados++;
                 Destroy(cartelesPedidos[j]);
-                destroyed = 1;
+                destroyed = true;
                 GetComponent<Puntuacion>().calcularPoint(10);
                 if (platosAcabados == total) {
                     GetComponent<Puntuacion>().calcularPoint(25);
@@ -77,6 +77,8 @@ public class AparicionPedidos : MonoBehaviour
                 }
             }
         }
-         --i;
+        if (destroyed)
+            --i;
+        else GetComponent<Puntuacion>().calcularPoint(-15);
     }
 }
