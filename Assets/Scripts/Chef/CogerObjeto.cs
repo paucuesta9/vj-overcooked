@@ -7,6 +7,7 @@ public class CogerObjeto : MonoBehaviour
     public GameObject destino;
     public bool canpickup;
 
+    public GameObject[] platos;
     struct Utensilio
     {
         public GameObject Object;
@@ -27,6 +28,8 @@ public class CogerObjeto : MonoBehaviour
     Utensilio utensilio, utensilioAux;
     bool hasItem;
     bool hasEncimera, dejarExtintor;
+
+    public GameObject menuSuperior;
     void Start()
     {
         canpickup = false;
@@ -38,7 +41,10 @@ public class CogerObjeto : MonoBehaviour
 
     void Update()
     {
-        if (Encimera != null && Encimera.tag == "Caja" && Input.GetKeyDown("e") && hasItem == false)
+        if (!hasItem && Input.GetKeyDown("N")) {
+            instiantiateMeal(menuSuperior.GetComponent<AparicionPedidos>().getNextMeal());
+        }
+        else if (Encimera != null && Encimera.tag == "Caja" && Input.GetKeyDown("e") && hasItem == false)
         {
             hasItem = true;
             Debug.Log("DALE A TU CUERPO");
@@ -532,6 +538,16 @@ public class CogerObjeto : MonoBehaviour
     public void llenarOlla()
     {
         utensilio.Object.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    private void instiantiateMeal(string meal) {
+        if (meal != "-1") {
+            hasItem = true;
+            int num = 0;
+            Int32.TryParse(meal, out num);
+            utensilio.Object = (GameObject)Instantiate(platos[num], transform.Find("Object").position, platos[num].transform.rotation);
+            utensilio.Object.transform.SetParent(transform);
+        }
     }
 }
 

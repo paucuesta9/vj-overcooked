@@ -26,6 +26,9 @@ public class AparicionPedidos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("O")) {
+            finished(getNextMeal());
+        }
         Vector3 posicion_anterior;
         if (tipoPlato.Count != 0 && i < 6) {
             time += Time.deltaTime;
@@ -80,5 +83,11 @@ public class AparicionPedidos : MonoBehaviour
         if (destroyed)
             --i;
         else GetComponent<Puntuacion>().calcularPoint(-15);
+    }
+
+    public string getNextMeal() {
+        if (i > 0)
+            return cartelesPedidos[0].name;
+        else return "-1";
     }
 }

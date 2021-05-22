@@ -79,7 +79,7 @@ public class CocinarSarten : MonoBehaviour
             progreso += 1.0f / waitTime * Time.deltaTime;
             progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
             if (progreso < 0.75) progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().color = new Color32(252, 219, 3, 255);
-            else if (progreso < 1)
+            else if (progreso < 1 && GlobalVariables.canBurn)
             {
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().color = new Color32(0, 255, 47, 255);
                 foreach (Transform hijo in transform)

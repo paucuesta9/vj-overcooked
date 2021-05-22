@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScreen : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
-            SceneManager.LoadScene("Nivel2");
         if (Input.GetKeyDown("1"))
             SceneManager.LoadScene("Nivel1");
         if (Input.GetKeyDown("2"))
@@ -26,5 +25,6 @@ public class ChangeScreen : MonoBehaviour
             SceneManager.LoadScene("Nivel4");
         if (Input.GetKeyDown("5"))
             SceneManager.LoadScene("Nivel5");
+        if (Input.GetKeyDown("b")) GlobalVariables.canBurn = !GlobalVariables.canBurn;
     }
 }
