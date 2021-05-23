@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4476553637630692517}
   - component: {fileID: 7356538304510918742}
   - component: {fileID: -7696711906166522361}
+  - component: {fileID: 3600552591879385436}
   m_Layer: 0
   m_Name: "PlatoPeque\xF1o"
   m_TagString: Plato
@@ -108,3 +109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35f9eddfb5b698419bc804c57536ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platosFinalizados: []
+--- !u!114 &3600552591879385436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5442913402408215934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2d53a05e63e044fb008ea1321565aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limpio: 0

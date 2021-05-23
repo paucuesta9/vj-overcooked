@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7067527244085716042}
   - component: {fileID: 4298226710363736348}
   - component: {fileID: 7709323715444030949}
+  - component: {fileID: 1043892507863183610}
   m_Layer: 0
   m_Name: PlatoGrande
   m_TagString: Plato
@@ -116,3 +117,16 @@ MonoBehaviour:
   - {fileID: 1058397006201714821, guid: 8c1eddae413d4274186a8e0a5afb976a, type: 3}
   - {fileID: 7509422620108048860, guid: 9bd66d3a3ceef094fbf6d681d2cd3e9f, type: 3}
   - {fileID: 2046523405939124555, guid: 43727f1cf96a6f149b1e202bbc9544ac, type: 3}
+--- !u!114 &1043892507863183610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662699925273104276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2d53a05e63e044fb008ea1321565aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limpio: 0
