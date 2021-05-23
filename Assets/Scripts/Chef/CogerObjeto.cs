@@ -160,6 +160,7 @@ public class CogerObjeto : MonoBehaviour
                         {
                             if (hijo.tag == "Plato")
                             {
+                                hijo.gameObject.GetComponent<EstadoPlato>().limpio = false;
                                 int numItems = hijo.childCount;
                                 if (utensilio.Object.name.Contains("Olla"))
                                 {
@@ -247,6 +248,9 @@ public class CogerObjeto : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material.color = colorToPaint;
             other.gameObject.GetComponent<LlenarOlla>().active = true;
         }
+        else if (tag == "Pica" && hasItem && utensilio.Object.tag == "Plato" && !utensilio.Object.GetComponent<EstadoPlato>().limpio) {
+            other.gameObject.GetComponent<LavarPlato>().active = true;
+        }
         else if (!hasItem && !canpickup) {
             if (tag == "Comida") {
                 if (other.gameObject.transform.parent.tag != "Plato" && other.gameObject.transform.parent.tag != "Utensilio")
@@ -302,6 +306,7 @@ public class CogerObjeto : MonoBehaviour
         if (tag == "Pica")
         {
             other.gameObject.GetComponent<LlenarOlla>().active = false;
+            other.gameObject.GetComponent<LavarPlato>().active = false;
             other.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(156, 156, 156, 255);
         }
         else if (other.gameObject == utensilio.Object || ((tag == "Platos") && (other.gameObject == utensilio.Object.transform.parent.gameObject)))
@@ -362,7 +367,7 @@ public class CogerObjeto : MonoBehaviour
         {
             foreach (Transform hijo in other.gameObject.transform)
             {
-                if (hijo.tag == "Plato")
+                if (hijo.tag == "Plato" && (hijo.childCount != 0 || hijo.gameObject.GetComponent<EstadoPlato>().limpio))
                 {
                     paintFornitures(other.gameObject);
                     break;
