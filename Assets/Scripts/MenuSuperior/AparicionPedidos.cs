@@ -29,7 +29,6 @@ public class AparicionPedidos : MonoBehaviour
         if (Input.GetKeyDown("o")) {
             finished(getNextMeal());
         }
-        Vector3 posicion_anterior;
         if (tipoPlato.Count != 0 && i < 6) {
             time += Time.deltaTime;
 
@@ -53,7 +52,8 @@ public class AparicionPedidos : MonoBehaviour
                     cartelesPedidos[i].transform.position = cartelesPedidos[i-1].transform.position + new Vector3(1.55f, 0, 0);
                 }
                 else {
-                     cartelesPedidos[i].transform.position = new Vector3(cartelesPedidos[i].transform.parent.position.x - 4.3f, cartelesPedidos[i].transform.parent.position.y + 20/cartelesPedidos[i].transform.parent.position.y , cartelesPedidos[i].transform.parent.position.z + 60f/cartelesPedidos[i].transform.parent.position.z);
+                    Vector3 pos = new Vector3(-810f, 450f, 1f);
+                     cartelesPedidos[i].transform.localPosition = pos;
                 }
                 cartelesPedidos[i].name = plato.ToString();
 

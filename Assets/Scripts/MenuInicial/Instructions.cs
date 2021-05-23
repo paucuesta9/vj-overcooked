@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Instructions : MonoBehaviour
 {
@@ -15,9 +17,8 @@ public class Instructions : MonoBehaviour
     }
 
     public void left_Arrow_inst() {
-        Debug.Log(num);
         if (num == 8) right_Arrow_Button.SetActive(true);
-        if (num > 8 ) {
+        if (num > 0 ) {
             //Se desactiva la escena anterior
             pag[num].SetActive(false);
             foreach (Transform hijo in pag[num].transform) {
@@ -41,7 +42,6 @@ public class Instructions : MonoBehaviour
             foreach (Transform hijo in pag[num].transform) {
                 hijo.gameObject.SetActive(false);
             }
-            Debug.Log("ENTRO");
             //Se activa la escena que se visualizará
             pag[++num].SetActive(true);
             Debug.Log(num);

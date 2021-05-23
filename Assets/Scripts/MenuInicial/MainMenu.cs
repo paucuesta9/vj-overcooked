@@ -20,4 +20,8 @@ public class MainMenu : MonoBehaviour
     public void LoadInstructions() {
         SceneManager.LoadScene("Instructions");
     }
+
+    public void Menu() {
+        SceneManager.LoadScene("Menu");
+    }
 }
