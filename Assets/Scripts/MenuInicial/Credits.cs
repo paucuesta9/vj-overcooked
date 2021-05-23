@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Instructions : MonoBehaviour
+public class Credits : MonoBehaviour
 {
     int num = 0;
-    public GameObject[] pag = new GameObject[9];
+    public GameObject[] pag = new GameObject[4];
     public GameObject left_Arrow_Button;
     public GameObject right_Arrow_Button;
 
@@ -15,7 +15,7 @@ public class Instructions : MonoBehaviour
     }
 
     public void left_Arrow_inst() {
-        if (num == 8) right_Arrow_Button.SetActive(true);
+        if (num == 3) right_Arrow_Button.SetActive(true);
         if (num > 0 ) {
             //Se desactiva la escena anterior
             pag[num].SetActive(false);
@@ -34,7 +34,7 @@ public class Instructions : MonoBehaviour
 
     public void right_Arrow_inst() {
         if (num == 0) left_Arrow_Button.SetActive(true);
-        if (num < 8 ) {
+        if (num < 3 ) {
             //Se desactiva la escena anterior
             pag[num].SetActive(false);
             foreach (Transform hijo in pag[num].transform) {
@@ -47,8 +47,7 @@ public class Instructions : MonoBehaviour
                 hijo.gameObject.SetActive(true);
             }
         }
-        if (num == 8) right_Arrow_Button.SetActive(false);
+        if (num == 3) right_Arrow_Button.SetActive(false);
         
     }
-
 }
