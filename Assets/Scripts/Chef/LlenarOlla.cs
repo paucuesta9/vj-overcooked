@@ -26,7 +26,7 @@ public class LlenarOlla : MonoBehaviour
     {
         if (active)
         {
-            if ((Input.GetKeyDown("g") || Input.GetKey("g")))
+            if (((!GlobalVariables.mouse && (Input.GetKeyDown("g") || Input.GetKey("g"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
             {
                 if (progreso == 0)
                 {
