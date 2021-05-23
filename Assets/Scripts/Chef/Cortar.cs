@@ -57,7 +57,7 @@ public class Cortar : MonoBehaviour
                     break;
                 }
             }
-            if (((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))))
+            if (((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
             {
                 if (progreso == 0)
                 {
