@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4134444134309275204}
   - component: {fileID: 3440170451962166484}
   m_Layer: 0
-  m_Name: Pan_junto
+  m_Name: Pan
   m_TagString: Comida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

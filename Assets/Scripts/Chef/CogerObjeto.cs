@@ -101,6 +101,16 @@ public class CogerObjeto : MonoBehaviour
                     utensilio.Object.transform.parent.gameObject.GetComponent<CocinarSarten>().active = false;
                 }
                 hasItem = true;
+                if (utensilio.Object.tag == "Comida") {
+                    GameObject parent = utensilio.Object.transform.parent.gameObject;
+                    Debug.Log(parent.name);
+                    if (parent.tag == "Plato") {
+                        Debug.Log("EEEEEE");
+                        canpickup = true;
+                        utensilio = new Utensilio(parent, new Color(0, 0, 1));
+                        utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                    }
+                }
                 utensilio.Object.transform.position = destino.transform.position;
                 utensilio.Object.transform.parent = destino.transform;
                 if (utensilio.Object.name.Contains("an"))
@@ -237,10 +247,8 @@ public class CogerObjeto : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material.color = colorToPaint;
             other.gameObject.GetComponent<LlenarOlla>().active = true;
         }
-        else if (!hasItem && !canpickup)
-        {
-            if (tag == "Comida")
-            {
+        else if (!hasItem && !canpickup) {
+            if (tag == "Comida") {
                 if (other.gameObject.transform.parent.tag != "Plato" && other.gameObject.transform.parent.tag != "Utensilio")
                 {
                     canpickup = true;
@@ -263,7 +271,7 @@ public class CogerObjeto : MonoBehaviour
                     else utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
                 }
             }
-            if (tag == "Utensilio" || tag == "Plato")
+            else if (tag == "Utensilio" || tag == "Plato")
             {
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
@@ -280,7 +288,6 @@ public class CogerObjeto : MonoBehaviour
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
                 utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
-
             }
         }
         else if (!hasItem)
@@ -548,6 +555,7 @@ public class CogerObjeto : MonoBehaviour
             Int32.TryParse(meal, out num);
             utensilio.Object = (GameObject)Instantiate(platos[num], destino.transform.position, platos[num].transform.rotation);
             utensilio.Object.transform.SetParent(transform);
+            utensilio.Object.name = meal;
         }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5616242713350273946}
   m_Layer: 0
   m_Name: Patata_cortada
-  m_TagString: Untagged
+  m_TagString: Comida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
