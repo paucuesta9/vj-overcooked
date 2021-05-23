@@ -160,6 +160,7 @@ public class CogerObjeto : MonoBehaviour
                         {
                             if (hijo.tag == "Plato")
                             {
+                                hijo.gameObject.GetComponent<EstadoPlato>().limpio = false;
                                 int numItems = hijo.childCount;
                                 if (utensilio.Object.name.Contains("Olla"))
                                 {
@@ -366,7 +367,7 @@ public class CogerObjeto : MonoBehaviour
         {
             foreach (Transform hijo in other.gameObject.transform)
             {
-                if (hijo.tag == "Plato")
+                if (hijo.tag == "Plato" && (hijo.childCount != 0 || hijo.gameObject.GetComponent<EstadoPlato>().limpio))
                 {
                     paintFornitures(other.gameObject);
                     break;
