@@ -45,7 +45,7 @@ public class CogerObjeto : MonoBehaviour
         if (!hasItem && Input.GetKeyDown("n")) {
             instiantiateMeal(menuSuperior.GetComponent<AparicionPedidos>().getNextMeal());
         }
-        else if (Encimera != null && Encimera.tag == "Caja" && Input.GetKeyDown("e") && hasItem == false)
+        else if (Encimera != null && Encimera.tag == "Caja" && ((!GlobalVariables.mouse && Input.GetKeyDown("e")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == false)
         {
             hasItem = true;
             Debug.Log("DALE A TU CUERPO");
@@ -69,7 +69,7 @@ public class CogerObjeto : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown("return"))
+        else if (((!GlobalVariables.mouse && Input.GetKeyDown("return")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))))
         {
             if (utensilio.Object.transform.parent.gameObject.tag == "Fogon")
             {
@@ -91,7 +91,7 @@ public class CogerObjeto : MonoBehaviour
         }
         else if (canpickup == true)
         {
-            if (Input.GetKeyDown("e") && hasItem == false)
+            if (((!GlobalVariables.mouse && Input.GetKeyDown("e")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == false)
             {
                 if (utensilio.Object.tag == "Extintor") utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 else if (utensilio.Object.transform.parent.tag == "Fogon") utensilio.Object.transform.parent.GetComponent<ControlFogones>().changeStateFire();
@@ -127,7 +127,7 @@ public class CogerObjeto : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown("q") && hasItem == true)
+        if (((!GlobalVariables.mouse && Input.GetKeyDown("q")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == true)
         {
             if (hasEncimera && Encimera.tag != "Caja")
             {
@@ -232,7 +232,7 @@ public class CogerObjeto : MonoBehaviour
                 utensilio.Object.transform.position = Pared.transform.Find("Object").transform.position;
             }
         }
-        if (Input.GetKeyDown("space") && hasItem == true && utensilio.Object.tag == "Extintor") {
+        if (((!GlobalVariables.mouse && Input.GetKeyDown("space")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))) && hasItem == true && utensilio.Object.tag == "Extintor") {
             if (!utensilio.Object.GetComponent<Extintor>().isActive()) utensilio.Object.GetComponent<Extintor>().activate();
             else utensilio.Object.GetComponent<Extintor>().stop();
         }
