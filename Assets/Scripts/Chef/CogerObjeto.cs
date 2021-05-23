@@ -387,7 +387,7 @@ public class CogerObjeto : MonoBehaviour
         }
         else if (tag == "Horno" && hasEncimera == false)
         {
-            if (utensilio.Object.tag == "Comida" || utensilio.Object.tag == "Plato")
+            if ((utensilio.Object.tag == "Comida" && utensilio.Object.name.Contains("_c")) || utensilio.Object.tag == "Plato")
             {
                 paintFornitures(other.gameObject);
             }
