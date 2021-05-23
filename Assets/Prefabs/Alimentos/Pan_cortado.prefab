@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7787613972286251282}
   - component: {fileID: 4346797223333390010}
   m_Layer: 0
-  m_Name: Pam_cortado
+  m_Name: Pan_cortado
   m_TagString: Comida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
