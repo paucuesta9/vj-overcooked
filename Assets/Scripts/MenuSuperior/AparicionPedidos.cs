@@ -19,7 +19,7 @@ public class AparicionPedidos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 30;
+        time = 2;
         i = 0;
     }
 
@@ -29,19 +29,20 @@ public class AparicionPedidos : MonoBehaviour
         if (Input.GetKeyDown("o")) {
             finished(getNextMeal());
         }
-        if (tipoPlato.Count != 0 && i < 6) {
+        if (tipoPlato.Count != 0 && i < 5) {
             time += Time.deltaTime;
 
             // Aparece un nuevo pedido cada minuto
-            if (Mathf.Floor(time / 30) == 1) { 
+            if (Mathf.Floor(time / 2) == 1) { 
                 time = 0;
 
                 // Se escoje aleatoriamente un plato correspondiente al nivel
                 System.Random random = new System.Random();
-                int indexNum = random.Next(tipoPlato.Max() + 1);
+                int indexNum = random.Next(tipoPlato.Count);
+                Debug.Log(indexNum);
                 int plato = tipoPlato[indexNum];
                 tipoPlato.RemoveAt(indexNum);
-
+                Debug.Log(plato);
                 // Se instancia el pedido
                 cartelesPedidos[i] = (GameObject)Instantiate(platos[plato]);
                 cartelesPedidos[i].transform.SetParent(transform);
@@ -69,7 +70,7 @@ public class AparicionPedidos : MonoBehaviour
                 cartelesPedidos[j].transform.position -= new Vector3(1.55f, 0, 0);
                 cartelesPedidos[j-1] = cartelesPedidos[j];
             }
-            if (num == cartelesPedidos[j].name) {
+            else if (num == cartelesPedidos[j].name) {
                 platosAcabados++;
                 Destroy(cartelesPedidos[j]);
                 destroyed = true;
@@ -80,14 +81,12 @@ public class AparicionPedidos : MonoBehaviour
                 }
             }
         }
-        if (destroyed)
-            --i;
+        if (destroyed) --i;
         else GetComponent<Puntuacion>().calcularPoint(-15);
     }
 
     public string getNextMeal() {
-        if (i > 0)
-            return cartelesPedidos[0].name;
+        if (i > 0) return cartelesPedidos[0].name;
         else return "-1";
     }
 }

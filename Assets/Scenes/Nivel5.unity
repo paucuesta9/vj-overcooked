@@ -7399,7 +7399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085c9450090e0624cbe99daa60ece486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punt: {fileID: 0}
+  punt: {fileID: 1022524292}
 --- !u!114 &1505343687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7435,7 +7435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo: 300
-  timer: {fileID: 0}
+  timer: {fileID: 1230238936}
   timeUP: {fileID: 426803375}
   exitButton: {fileID: 1922289319}
 --- !u!114 &1505343689
