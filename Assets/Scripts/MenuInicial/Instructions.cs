@@ -15,7 +15,7 @@ public class Instructions : MonoBehaviour
     }
 
     public void left_Arrow_inst() {
-        if (num == 14) right_Arrow_Button.SetActive(true);
+        if (num == 16) right_Arrow_Button.SetActive(true);
         if (num > 0 ) {
             //Se desactiva la escena anterior
             pag[num].SetActive(false);
@@ -34,7 +34,7 @@ public class Instructions : MonoBehaviour
 
     public void right_Arrow_inst() {
         if (num == 0) left_Arrow_Button.SetActive(true);
-        if (num < 14 ) {
+        if (num < 16 ) {
             //Se desactiva la escena anterior
             pag[num].SetActive(false);
             foreach (Transform hijo in pag[num].transform) {
@@ -47,7 +47,7 @@ public class Instructions : MonoBehaviour
                 hijo.gameObject.SetActive(true);
             }
         }
-        if (num == 14) right_Arrow_Button.SetActive(false);
+        if (num == 16) right_Arrow_Button.SetActive(false);
         
     }
 

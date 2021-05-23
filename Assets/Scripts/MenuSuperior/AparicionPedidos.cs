@@ -19,7 +19,7 @@ public class AparicionPedidos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 2;
+        time = 30;
         i = 0;
     }
 
@@ -33,7 +33,7 @@ public class AparicionPedidos : MonoBehaviour
             time += Time.deltaTime;
 
             // Aparece un nuevo pedido cada minuto
-            if (Mathf.Floor(time / 2) == 1) { 
+            if (Mathf.Floor(time / 30) == 1) { 
                 time = 0;
 
                 // Se escoje aleatoriamente un plato correspondiente al nivel
