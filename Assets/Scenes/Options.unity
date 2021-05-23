@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 60844544}
   - component: {fileID: 60844543}
   - component: {fileID: 60844542}
-  - component: {fileID: 60844541}
   - component: {fileID: 60844540}
   m_Layer: 5
   m_Name: Menu
@@ -153,26 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 60844539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d22cb293fd71f4091a3d43491737d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pag:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  left_Arrow_Button: {fileID: 0}
-  right_Arrow_Button: {fileID: 0}
---- !u!114 &60844541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60844539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d73f5b3258b6f04792eb6c9ae9c8d64, type: 3}
+  m_Script: {fileID: 11500000, guid: bdcf2d18309d86a4d961ac4aecb432d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &60844542
@@ -343,7 +323,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 60844540}
-        m_TargetAssemblyTypeName: Credits, Assembly-CSharp
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -632,7 +612,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 633748250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 60844540}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: MouseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &633748250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +745,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 656901185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 60844540}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: KeyboardClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &656901185
 MonoBehaviour:
   m_ObjectHideFlags: 0

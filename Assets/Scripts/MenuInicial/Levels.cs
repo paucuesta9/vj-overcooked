@@ -48,7 +48,7 @@ public class Levels : MonoBehaviour
 
     public void level() {
         scene++;
-        string nivel = "Nivel" + scene.ToString();
-        SceneManager.LoadScene(nivel);
+        GlobalVariables.scene = scene;
+        SceneManager.LoadScene("Options");
     }
 }

@@ -3,4 +3,5 @@
         public static bool canBurn = true;
         public static int points = 0;
         public static bool mouse = false;
+        public static int scene = 0;
     }
