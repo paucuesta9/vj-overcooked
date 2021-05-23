@@ -26,9 +26,6 @@ public class AparicionPedidos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("o")) {
-            finished(getNextMeal());
-        }
         if (tipoPlato.Count != 0 && i < 5) {
             time += Time.deltaTime;
 

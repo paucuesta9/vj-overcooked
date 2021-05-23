@@ -123,4 +123,24 @@ public class CocinarOlla : MonoBehaviour
         }
         
     }
+
+    public void finish() {
+        Destroy(progresBar);
+        foreach (Transform hijo in transform)
+        {
+            if (hijo.tag == "Utensilio")
+            {
+                foreach (Transform ingrediente in hijo)
+                {
+                    if (ingrediente.name != "Agua" && ingrediente.name != "Object")
+                    {
+                        if (ingrediente.name == "ensalada_patatas")
+                            ingrediente.name = "ensalada_patatas_o";
+                        else ingrediente.name.Replace("_c", "_o");
+                    }
+                }
+            }
+        }
+        active = false;
+    }
 }
