@@ -129,7 +129,14 @@ public class CogerObjeto : MonoBehaviour
         }
         if (((!GlobalVariables.mouse && Input.GetKeyDown("q")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == true)
         {
-            if (hasEncimera && Encimera.tag != "Caja")
+            if (hasEncimera && Encimera.tag == "Basura") 
+            {
+                foreach (Transform alimento in utensilio.Object.transform)
+                {
+                    Destroy(alimento.gameObject);
+                }
+            }
+            else if (hasEncimera && Encimera.tag != "Caja")
             {
                 hasItem = false;
                 if (hasEncimeraAnObject(Encimera))
@@ -363,6 +370,9 @@ public class CogerObjeto : MonoBehaviour
             }
 
         }
+        else if (tag == "Basura" && hasItem && utensilio.Object.tag == "Plato" && utensilio.Object.transform.childCount != 0) {
+            paintFornitures(other.gameObject);
+        }
         else if (tag == "Encimera" && hasEncimeraAnObject(other.gameObject))
         {
             foreach (Transform hijo in other.gameObject.transform)
@@ -428,7 +438,7 @@ public class CogerObjeto : MonoBehaviour
         if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
             dejarExtintor = false;
         }
-        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno" || tag == "Fin") && other.gameObject == Encimera)
+        else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno" || tag == "Fin" || tag == "Basura") && other.gameObject == Encimera)
         {
             hasEncimera = false;
             Encimera = null;
@@ -468,6 +478,11 @@ public class CogerObjeto : MonoBehaviour
                 {
                     hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 }
+            } else if (tag == "Basura")
+            {
+                other.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(255, 200, 200, 200);
+                other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color32(255, 200, 200, 200);
+                other.gameObject.transform.GetChild(0).Rotate(60,0,0);
             }
             if (EncimeraAux != null && !hasEncimeraAnObject(EncimeraAux))
             {
@@ -544,6 +559,12 @@ public class CogerObjeto : MonoBehaviour
                     }
                 }
 
+            }
+            else if (tag == "Basura")
+            {
+                Encimera.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                Encimera.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+                Encimera.transform.GetChild(0).Rotate(-60,0,0);
             }
         }
     }

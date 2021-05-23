@@ -12299,6 +12299,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: trashcan_01d
       objectReference: {fileID: 0}
+    - target: {fileID: 1949220277597600, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_TagString
+      value: Basura
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055430429442940, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055430429442940, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055430429442940, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055430429442940, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055430429442940, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4279094873862812, guid: 88758cdb926ba08448c1ca9d8ad0046e, type: 3}
       propertyPath: m_RootOrder
       value: 2
