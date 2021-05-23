@@ -135,4 +135,26 @@ public class CocinarSarten : MonoBehaviour
         }
          
     }
+
+    public void finish() {
+        Destroy(progresBar);
+       foreach (Transform hijo in transform)
+        {
+            if (hijo.tag == "Utensilio")
+            {
+                foreach (Transform ingrediente in hijo)
+                {   
+                    if (!ingrediente.name.Contains("arne"))
+                        ingrediente.name.Replace("_c", "_s");
+                    else if (ingrediente.name.Contains("Carne"))
+                        ingrediente.name = "carne_s";
+                    else if (ingrediente.name == "carne_queso")
+                        ingrediente.name = "carne_queso_s";
+                    else if (ingrediente.name == "carne_queso_cebolla")
+                        ingrediente.name = "carne_queso_cebolla_s";
+                }
+            }
+        }
+        active = false;
+    }
 }
