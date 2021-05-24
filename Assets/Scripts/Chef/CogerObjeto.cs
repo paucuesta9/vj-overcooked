@@ -42,6 +42,10 @@ public class CogerObjeto : MonoBehaviour
 
     void Update()
     {
+        if (hasEncimera && Encimera.tag == "Fogon" && Input.GetKeyDown("o")) {
+            Encimera.GetComponent<CocinarOlla>().finish();
+            Encimera.GetComponent<CocinarSarten>().finish();
+        }
         if (!hasItem && Input.GetKeyDown("n")) {
             instiantiateMeal(menuSuperior.GetComponent<AparicionPedidos>().getNextMeal());
         }
