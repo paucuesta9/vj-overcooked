@@ -16,6 +16,7 @@ public class CocinarOlla : MonoBehaviour
     GameObject newMeal;
     float waitTime = 15.0f;
     bool hayFuego;
+    AudioSource audio;
     
 
     public GameObject jugador;
@@ -25,6 +26,7 @@ public class CocinarOlla : MonoBehaviour
         progreso = 0;
         active = false;
         hayFuego = false;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class CocinarOlla : MonoBehaviour
         {
             if (progreso == 0)
             {
+                if (hayFuego) audio.Stop();
                 hayFuego = false;
                 progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);
@@ -118,6 +121,7 @@ public class CocinarOlla : MonoBehaviour
                 if (!hayFuego) {
                     fire = (GameObject)Instantiate(fireModel, hijo.position, fireModel.transform.rotation);
                     hayFuego = true;
+                    audio.Play();
                 }
             }
         }

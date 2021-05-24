@@ -15,6 +15,7 @@ public class Cortar : MonoBehaviour
     float waitTime = 5.0f;
 
     public GameObject jugador;
+    AudioSource audio;
 
     public GameObject panCortado, tomateCortado, lechugaCortada, quesoCortado, cebollaCortada;
 
@@ -24,6 +25,7 @@ public class Cortar : MonoBehaviour
         progreso = 0;
         active = false;
         canCut = false;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class Cortar : MonoBehaviour
             {
                 if (progreso == 0)
                 {
+                    audio.Play();
                     progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                     progresBar.transform.SetParent(transform);
                 }
@@ -73,12 +76,14 @@ public class Cortar : MonoBehaviour
                 Destroy(progresBar);
                 progreso = 0;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
+                audio.Stop();
             }
         }
         else if (progreso != 0)
         {
             Destroy(progresBar);
             progreso = 0;
+            audio.Stop();
         }
     }
 

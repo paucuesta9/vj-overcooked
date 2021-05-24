@@ -15,11 +15,13 @@ public class LlenarOlla : MonoBehaviour
     float waitTime = 5.0f;
 
     public GameObject jugador;
+    AudioSource audio;
 
     void Start()
     {
         progreso = 0;
         active = false;
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class LlenarOlla : MonoBehaviour
             {
                 if (progreso == 0)
                 {
+                    audio.Play();
                     progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                     progresBar.transform.SetParent(transform);
                 }
@@ -37,6 +40,7 @@ public class LlenarOlla : MonoBehaviour
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
                 if (progreso >= 1)
                 {
+                    audio.Stop();
                     jugador.GetComponent<CogerObjeto>().llenarOlla();
                     Destroy(progresBar);
                     progreso = 0;
@@ -45,6 +49,7 @@ public class LlenarOlla : MonoBehaviour
             }
             else if (progreso != 0)
             {
+                audio.Stop();
                 Destroy(progresBar);
                 progreso = 0;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
@@ -52,6 +57,7 @@ public class LlenarOlla : MonoBehaviour
         }
         else if (progreso != 0)
         {
+            audio.Stop();
             Destroy(progresBar);
             progreso = 0;
         }

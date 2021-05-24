@@ -24,6 +24,7 @@ public class moveChef : MonoBehaviour
         lastPosX = Input.mousePosition.x;
         lastPosY = Input.mousePosition.y;
         posX = posY = 0;
+
     }
 
     void Update()
@@ -36,10 +37,12 @@ public class moveChef : MonoBehaviour
                 //lastPosY = Input.mousePosition.y;
                 Vector3 dir = Input.mousePosition - camara.WorldToScreenPoint(transform.position);
                 vectorPlayer = new Vector3(dir.x, -1.0f, dir.y);
+            }
+            else {
+                vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, -1.0f, Input.GetAxis("Vertical") * 10f);
+                transform.LookAt(transform.position + new Vector3(vectorPlayer.x, 0, vectorPlayer.z));
                 
             }
-            else vectorPlayer = new Vector3(Input.GetAxis("Horizontal") * 10f, -1.0f, Input.GetAxis("Vertical") * 10f);
-            transform.LookAt(transform.position + new Vector3(vectorPlayer.x, 0, vectorPlayer.z));
         }
     }
 

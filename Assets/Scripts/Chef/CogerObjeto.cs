@@ -216,7 +216,10 @@ public class CogerObjeto : MonoBehaviour
                 {
                     utensilio.Object.transform.parent = Encimera.transform;
                     utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                    if (Encimera.tag == "Fin") Encimera.GetComponent<PlatoTerminado>().finished();
+                    if (Encimera.tag == "Fin") {
+                        Encimera.GetComponent<PlatoTerminado>().finished();
+                        
+                    }
                 }
                 if (utensilio.Object.name.Contains("an"))
                 {

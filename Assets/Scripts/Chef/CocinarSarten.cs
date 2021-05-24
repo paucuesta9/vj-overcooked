@@ -20,7 +20,7 @@ public class CocinarSarten : MonoBehaviour
     GameObject newMeal;
     float waitTime = 15.0f;
 
-
+    AudioSource audio;
     public GameObject jugador;
 
     void Start()
@@ -28,6 +28,7 @@ public class CocinarSarten : MonoBehaviour
         progreso = 0;
         active = false;
         hayFuego = false;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class CocinarSarten : MonoBehaviour
         {
             if (progreso == 0)
             {
+                if (hayFuego) audio.Stop();
                 hayFuego = false;
                 progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);
@@ -131,6 +133,7 @@ public class CocinarSarten : MonoBehaviour
                 if (!hayFuego) {
                     fire = (GameObject)Instantiate(fireModel, hijo.position + new Vector3(0,0.5f,-0.5f), fireModel.transform.rotation);
                     hayFuego = true;
+                    audio.Play();
                 }
         }
          
