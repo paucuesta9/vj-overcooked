@@ -4063,20 +4063,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.025, z: 0.01913937}
   m_Center: {x: 0, y: -0.018, z: 0}
---- !u!114 &469676670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469676664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a718a693efbb5634d90c4bcc2ae66913, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  nieveCarbonicaModel: {fileID: 4452203289665739065, guid: 20dcedaf4816fef45a799070b5c0e5fb, type: 3}
 --- !u!1001 &471919176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10376,7 +10362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167.8183, y: -135.55069}
+  m_AnchoredPosition: {x: -167.8183, y: -135.55066}
   m_SizeDelta: {x: 207.09998, y: 94.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030416654

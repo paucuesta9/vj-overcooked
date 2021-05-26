@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8464161725122439765}
   - component: {fileID: 7443387017592681871}
   - component: {fileID: 4659200621793853765}
-  - component: {fileID: 4785114411462051943}
+  - component: {fileID: -585714197757785285}
   m_Layer: 0
   m_Name: Extintor
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4785114411462051943
+--- !u!114 &-585714197757785285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  nieveCarbonicaModel: {fileID: 0}
+  nieveCarbonicaModel: {fileID: 4452203289665739065, guid: 0e16a0fb89464ac49a3333717175e7df, type: 3}
