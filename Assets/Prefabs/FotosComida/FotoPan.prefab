@@ -151,6 +151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8580546387928556108}
     m_Modifications:
+    - target: {fileID: 3440170451962166484, guid: 4b6ee1fc9353b3846b1249608a789745, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3979759260640725061, guid: 4b6ee1fc9353b3846b1249608a789745, type: 3}
       propertyPath: m_Name
       value: Pan_junto
