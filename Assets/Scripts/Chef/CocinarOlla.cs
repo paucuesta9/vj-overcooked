@@ -105,6 +105,8 @@ public class CocinarOlla : MonoBehaviour
 
     private void quemado()
     {
+        if (!GlobalVariables.mute && !audio.isPlaying) audio.Play();
+        else if (GlobalVariables.mute) audio.Stop();
         foreach (Transform hijo in transform)
         {
             if (hijo.gameObject.tag == "Utensilio")
@@ -121,7 +123,6 @@ public class CocinarOlla : MonoBehaviour
                 if (!hayFuego) {
                     fire = (GameObject)Instantiate(fireModel, hijo.position, fireModel.transform.rotation);
                     hayFuego = true;
-                    audio.Play();
                 }
             }
         }

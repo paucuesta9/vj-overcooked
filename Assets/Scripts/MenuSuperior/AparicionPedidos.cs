@@ -24,8 +24,6 @@ public class AparicionPedidos : MonoBehaviour
     {
         time = 30;
         i = 0;
-        audio = GetComponent<AudioSource>();
-        audio2 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,7 +35,7 @@ public class AparicionPedidos : MonoBehaviour
             // Aparece un nuevo pedido cada minuto
             if (Mathf.Floor(time / 30) == 1) { 
                 time = 0;
-                audio.Play();
+                if (!GlobalVariables.mute) audio.Play();
                 // Se escoje aleatoriamente un plato correspondiente al nivel
                 System.Random random = new System.Random();
                 int indexNum = random.Next(tipoPlato.Count);

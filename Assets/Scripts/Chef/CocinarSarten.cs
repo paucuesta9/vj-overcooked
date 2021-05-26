@@ -116,6 +116,8 @@ public class CocinarSarten : MonoBehaviour
 
     private void quemado()
     {
+        if (!GlobalVariables.mute && !audio.isPlaying) audio.Play();
+        else if (GlobalVariables.mute) audio.Stop();
         foreach (Transform hijo in transform)
         {
             if (hijo.gameObject.tag == "Utensilio")
@@ -132,7 +134,6 @@ public class CocinarSarten : MonoBehaviour
                 if (!hayFuego) {
                     fire = (GameObject)Instantiate(fireModel, hijo.position + new Vector3(0,0.5f,-0.5f), fireModel.transform.rotation);
                     hayFuego = true;
-                    audio.Play();
                 }
         }
          

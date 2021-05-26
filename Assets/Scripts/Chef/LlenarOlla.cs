@@ -32,10 +32,12 @@ public class LlenarOlla : MonoBehaviour
             {
                 if (progreso == 0)
                 {
-                    audio.Play();
+                    if (!GlobalVariables.mute) audio.Play();
                     progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                     progresBar.transform.SetParent(transform);
                 }
+                if (!GlobalVariables.mute && !audio.isPlaying) audio.Play();
+                else if (GlobalVariables.mute) audio.Stop();
                 progreso += 1.0f / waitTime * Time.deltaTime;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
                 if (progreso >= 1)
