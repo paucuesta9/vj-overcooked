@@ -25,6 +25,7 @@ public class Fuego : MonoBehaviour
             tiempo += 1.0f * 0.5f * Time.deltaTime;
             if (tiempo > 1)
             {
+                Debug.Log(transform.parent.gameObject.name);
                 Destroy(gameObject);
             }
         }

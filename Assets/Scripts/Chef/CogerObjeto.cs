@@ -42,11 +42,13 @@ public class CogerObjeto : MonoBehaviour
 
     void Update()
     {
-        if (hasEncimera && Encimera.tag == "Fogon" && Input.GetKeyDown("o")) {
+        if (hasEncimera && (Encimera.tag == "Fogon" || Encimera.tag == "Horno") && Input.GetKeyDown("o"))
+        {
             Encimera.GetComponent<CocinarOlla>().finish();
             Encimera.GetComponent<CocinarSarten>().finish();
         }
-        if (!hasItem && Input.GetKeyDown("n")) {
+        if (!hasItem && Input.GetKeyDown("n"))
+        {
             instiantiateMeal(menuSuperior.GetComponent<AparicionPedidos>().getNextMeal());
         }
         else if (Encimera != null && Encimera.tag == "Caja" && ((!GlobalVariables.mouse && Input.GetKeyDown("e")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == false)
@@ -64,10 +66,12 @@ public class CogerObjeto : MonoBehaviour
             }
             else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
-        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && Input.GetKeyDown("e")) {
+        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && Input.GetKeyDown("e"))
+        {
             foreach (Transform hijo in Encimera.transform)
             {
-                if (hijo.name != "Object") {
+                if (hijo.name != "Object")
+                {
                     hijo.position = utensilio.Object.transform.position;
                     hijo.parent = utensilio.Object.transform;
                 }
@@ -105,10 +109,12 @@ public class CogerObjeto : MonoBehaviour
                     utensilio.Object.transform.parent.gameObject.GetComponent<CocinarSarten>().active = false;
                 }
                 hasItem = true;
-                if (utensilio.Object.tag == "Comida") {
+                if (utensilio.Object.tag == "Comida")
+                {
                     GameObject parent = utensilio.Object.transform.parent.gameObject;
                     Debug.Log(parent.name);
-                    if (parent.tag == "Plato") {
+                    if (parent.tag == "Plato")
+                    {
                         Debug.Log("EEEEEE");
                         canpickup = true;
                         utensilio = new Utensilio(parent, new Color(0, 0, 1));
@@ -133,7 +139,7 @@ public class CogerObjeto : MonoBehaviour
         }
         if (((!GlobalVariables.mouse && Input.GetKeyDown("q")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))) && hasItem == true)
         {
-            if (hasEncimera && Encimera.tag == "Basura") 
+            if (hasEncimera && Encimera.tag == "Basura")
             {
                 foreach (Transform alimento in utensilio.Object.transform)
                 {
@@ -216,9 +222,10 @@ public class CogerObjeto : MonoBehaviour
                 {
                     utensilio.Object.transform.parent = Encimera.transform;
                     utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                    if (Encimera.tag == "Fin") {
+                    if (Encimera.tag == "Fin")
+                    {
                         Encimera.GetComponent<PlatoTerminado>().finished();
-                        
+
                     }
                 }
                 if (utensilio.Object.name.Contains("an"))
@@ -241,13 +248,16 @@ public class CogerObjeto : MonoBehaviour
                         }
                     }
                 if (utensilio.Object.transform.parent.tag == "Fogon") Encimera.GetComponent<ControlFogones>().changeStateFire();
-            } else if (dejarExtintor) {
+            }
+            else if (dejarExtintor)
+            {
                 hasItem = false;
                 utensilio.Object.transform.parent = Pared.transform;
                 utensilio.Object.transform.position = Pared.transform.Find("Object").transform.position;
             }
         }
-        if (((!GlobalVariables.mouse && Input.GetKeyDown("space")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))) && hasItem == true && utensilio.Object.tag == "Extintor") {
+        if (((!GlobalVariables.mouse && Input.GetKeyDown("space")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))) && hasItem == true && utensilio.Object.tag == "Extintor")
+        {
             if (!utensilio.Object.GetComponent<Extintor>().isActive()) utensilio.Object.GetComponent<Extintor>().activate();
             else utensilio.Object.GetComponent<Extintor>().stop();
         }
@@ -262,11 +272,14 @@ public class CogerObjeto : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material.color = colorToPaint;
             other.gameObject.GetComponent<LlenarOlla>().active = true;
         }
-        else if (tag == "Pica" && hasItem && utensilio.Object.tag == "Plato" && !utensilio.Object.GetComponent<EstadoPlato>().limpio) {
+        else if (tag == "Pica" && hasItem && utensilio.Object.tag == "Plato" && !utensilio.Object.GetComponent<EstadoPlato>().limpio)
+        {
             other.gameObject.GetComponent<LavarPlato>().active = true;
         }
-        else if (!hasItem && !canpickup) {
-            if (tag == "Comida") {
+        else if (!hasItem && !canpickup)
+        {
+            if (tag == "Comida")
+            {
                 if (other.gameObject.transform.parent.tag != "Plato" && other.gameObject.transform.parent.tag != "Utensilio")
                 {
                     canpickup = true;
@@ -301,7 +314,8 @@ public class CogerObjeto : MonoBehaviour
                 utensilio = new Utensilio(other.gameObject.transform.GetChild(other.gameObject.transform.childCount - 1).gameObject, new Color(1, 1, 1));
                 utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
             }
-            else if (tag == "Extintor") {
+            else if (tag == "Extintor")
+            {
                 Debug.Log("SOY YOOOO LA QUE SIGUE AQUI");
                 canpickup = true;
                 utensilio = new Utensilio(other.gameObject, new Color(0, 0, 1));
@@ -365,7 +379,8 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Enter " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
+        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared")
+        {
             dejarExtintor = true;
             Pared = other.gameObject;
         }
@@ -377,7 +392,8 @@ public class CogerObjeto : MonoBehaviour
             }
 
         }
-        else if (tag == "Basura" && hasItem && utensilio.Object.tag == "Plato" && utensilio.Object.transform.childCount != 0) {
+        else if (tag == "Basura" && hasItem && utensilio.Object.tag == "Plato" && utensilio.Object.transform.childCount != 0)
+        {
             paintFornitures(other.gameObject);
         }
         else if (tag == "Encimera" && hasEncimeraAnObject(other.gameObject))
@@ -426,7 +442,7 @@ public class CogerObjeto : MonoBehaviour
                 }
             }
         }
-        
+
         else if (tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Fin")
         {
             if (hasItem && utensilio.Object.tag != "Comida")
@@ -442,7 +458,8 @@ public class CogerObjeto : MonoBehaviour
     {
         Debug.Log("Exit " + other.gameObject.name);
         var tag = other.gameObject.tag;
-        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared") {
+        if (hasItem && utensilio.Object.tag == "Extintor" && tag == "Pared")
+        {
             dejarExtintor = false;
         }
         else if ((tag == "Encimera" || tag == "Fogon" || tag == "Caja" || tag == "Horno" || tag == "Fin" || tag == "Basura") && other.gameObject == Encimera)
@@ -485,11 +502,12 @@ public class CogerObjeto : MonoBehaviour
                 {
                     hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 }
-            } else if (tag == "Basura")
+            }
+            else if (tag == "Basura")
             {
                 other.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(255, 200, 200, 200);
                 other.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color32(255, 200, 200, 200);
-                other.gameObject.transform.GetChild(0).Rotate(60,0,0);
+                other.gameObject.transform.GetChild(0).Rotate(60, 0, 0);
             }
             if (EncimeraAux != null && !hasEncimeraAnObject(EncimeraAux))
             {
@@ -571,7 +589,7 @@ public class CogerObjeto : MonoBehaviour
             {
                 Encimera.GetComponent<MeshRenderer>().material.color = colorToPaint;
                 Encimera.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
-                Encimera.transform.GetChild(0).Rotate(-60,0,0);
+                Encimera.transform.GetChild(0).Rotate(-60, 0, 0);
             }
         }
     }
@@ -581,8 +599,10 @@ public class CogerObjeto : MonoBehaviour
         utensilio.Object.transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    private void instiantiateMeal(string meal) {
-        if (meal != "-1") {
+    private void instiantiateMeal(string meal)
+    {
+        if (meal != "-1")
+        {
             hasItem = true;
             int num = 0;
             Int32.TryParse(meal, out num);

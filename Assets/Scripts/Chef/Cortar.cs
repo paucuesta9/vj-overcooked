@@ -49,17 +49,12 @@ public class Cortar : MonoBehaviour
                             if (hijo.gameObject.name.Contains("Pan")) canCut = true;
                             else canCut = false;
                         }
-                        else
-                        {
-                            if (hijo.gameObject.name.Contains("Pizza")) canCut = true;
-                            else canCut = false;
-                        }
                     }
                     else canCut = false;
                     break;
                 }
             }
-            if (((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
+            if (canCut && ((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
             {
                 if (progreso == 0)
                 {
