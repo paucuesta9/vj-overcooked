@@ -38,7 +38,6 @@ public class CocinarSarten : MonoBehaviour
         {
             if (progreso == 0)
             {
-                if (hayFuego) audio.Stop();
                 hayFuego = false;
                 progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                 progresBar.transform.SetParent(transform);

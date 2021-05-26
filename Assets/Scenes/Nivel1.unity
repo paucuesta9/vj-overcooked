@@ -16503,7 +16503,7 @@ PrefabInstance:
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: chesseBurguer
       value: 
@@ -16567,7 +16567,7 @@ PrefabInstance:
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: ensaladaPatatasModel
       value: 
@@ -18446,7 +18446,7 @@ PrefabInstance:
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: chesseBurguer
       value: 
@@ -18510,7 +18510,7 @@ PrefabInstance:
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: ensaladaPatatasModel
       value: 
@@ -23190,7 +23190,7 @@ PrefabInstance:
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 501549367757080835, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: chesseBurguer
       value: 
@@ -23294,7 +23294,7 @@ PrefabInstance:
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: fireModel
       value: 
-      objectReference: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+      objectReference: {fileID: 838316079889555604, guid: 99e470a4f3e7e4a4680b1696fefaa940, type: 3}
     - target: {fileID: 7989878269389903968, guid: e6036f5757811a44cb5fb8c46a34c18b, type: 3}
       propertyPath: ensaladaPatatasModel
       value: 
