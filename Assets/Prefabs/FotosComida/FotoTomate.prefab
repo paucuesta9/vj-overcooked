@@ -155,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomate_cortado
       objectReference: {fileID: 0}
+    - target: {fileID: 4057201975213228249, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8847110643453791374, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686381714924391716, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8771956004021352104, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
       propertyPath: m_Name
       value: Carne

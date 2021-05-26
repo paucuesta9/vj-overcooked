@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Queso
       objectReference: {fileID: 0}
+    - target: {fileID: 7435802889853782009, guid: 9004c227b91dfce448e0ebe152e3d8c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9004c227b91dfce448e0ebe152e3d8c8, type: 3}
 --- !u!4 &1821725320697920760 stripped
