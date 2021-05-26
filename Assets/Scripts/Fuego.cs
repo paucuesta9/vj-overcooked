@@ -22,9 +22,10 @@ public class Fuego : MonoBehaviour
     {
         if (destroy)
         {
-            tiempo += 1.0f * 0.5 * Time.deltaTime;
+            tiempo += 1.0f * 0.5f * Time.deltaTime;
             if (tiempo > 1)
             {
+                Debug.Log(transform.parent.gameObject.name);
                 Destroy(gameObject);
             }
         }
