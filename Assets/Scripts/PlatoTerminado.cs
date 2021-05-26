@@ -10,16 +10,17 @@ public class PlatoTerminado : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void finished() {
+    public void finished()
+    {
         foreach (Transform hijo in transform)
         {
             if (hijo.name != "Object")
@@ -28,6 +29,7 @@ public class PlatoTerminado : MonoBehaviour
                 {
                     if (plato.tag != "Plato")
                     {
+                        menuSuperior.GetComponent<AparicionPedidos>().finished(plato.gameObject.name);
                         Destroy(plato.gameObject);
                     }
                 }
