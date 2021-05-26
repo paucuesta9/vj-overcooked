@@ -519,9 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  fireModel: {fileID: 0}
+  fireModel: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  ensaladaPatatasModel: {fileID: 0}
+  ensaladaPatatasModel: {fileID: 995870043350332834, guid: 2e6f353a2109a9d4da095b3a3143049f, type: 3}
   jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
 --- !u!114 &501549367757080835
 MonoBehaviour:
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  fireModel: {fileID: 0}
-  chesseBurguer: {fileID: 0}
-  onionChesseBurguer: {fileID: 0}
+  fireModel: {fileID: 838316079889555604, guid: f024a88962dbdee41b3e9e5ab844d7b9, type: 3}
+  chesseBurguer: {fileID: 6983494925623983917, guid: 1564606107ec0134a99bd2f1a9160920, type: 3}
+  onionChesseBurguer: {fileID: 6672469782034750548, guid: 4429d1d229a11bf49b11440ab8d416ef, type: 3}
   jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
 --- !u!82 &5608580152431757513
 AudioSource:

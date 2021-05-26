@@ -20,15 +20,18 @@ public class Fuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (destroy) {
-            tiempo += 1.0f * Time.deltaTime;
-            if (tiempo > 1) {
+        if (destroy)
+        {
+            tiempo += 1.0f * 0.5 * Time.deltaTime;
+            if (tiempo > 1)
+            {
                 Destroy(gameObject);
             }
         }
     }
 
-    public void destroyObject() {
+    public void destroyObject()
+    {
         destroy = true;
     }
 }
