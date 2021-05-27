@@ -110,4 +110,10 @@ public class CocinarHorno : MonoBehaviour
             }
         }
     }
+
+    public void taken()
+    {
+        Destroy(progresBar);
+        progreso = 0;
+    }
 }

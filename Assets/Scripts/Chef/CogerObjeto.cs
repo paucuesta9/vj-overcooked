@@ -76,6 +76,7 @@ public class CogerObjeto : MonoBehaviour
                     hijo.parent = utensilio.Object.transform;
                 }
             }
+            Encimera.GetComponent<CocinarHorno>().taken();
         }
         else if (((!GlobalVariables.mouse && Input.GetKeyDown("return")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))))
         {
@@ -281,6 +282,7 @@ public class CogerObjeto : MonoBehaviour
         else if (tag == "Pica" && hasItem && utensilio.Object.tag == "Plato" && !utensilio.Object.GetComponent<EstadoPlato>().limpio)
         {
             other.gameObject.GetComponent<LavarPlato>().active = true;
+            other.gameObject.GetComponent<LavarPlato>().plato = utensilio.Object;
         }
         else if (!hasItem && !canpickup)
         {
