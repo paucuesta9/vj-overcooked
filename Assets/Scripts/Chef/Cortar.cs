@@ -9,6 +9,8 @@ public class Cortar : MonoBehaviour
     public bool active, canCut;
     public int typeCuchillo;
 
+    public GameObject cuchillo;
+
     public GameObject progressBarModel;
     GameObject progresBar;
     GameObject newAlimento;
@@ -56,6 +58,7 @@ public class Cortar : MonoBehaviour
             }
             if (canCut && ((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
             {
+                cuchillo.GetComponent<Cuchillo>().cut = true;
                 if (progreso == 0)
                 {
                     if (!GlobalVariables.mute) audio.Play();
@@ -70,6 +73,7 @@ public class Cortar : MonoBehaviour
             }
             else if (progreso != 0)
             {
+                cuchillo.GetComponent<Cuchillo>().cut = false;
                 Destroy(progresBar);
                 progreso = 0;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
@@ -78,6 +82,7 @@ public class Cortar : MonoBehaviour
         }
         else if (progreso != 0)
         {
+            cuchillo.GetComponent<Cuchillo>().cut = false;
             Destroy(progresBar);
             progreso = 0;
             audio.Stop();
@@ -86,6 +91,7 @@ public class Cortar : MonoBehaviour
 
     private void cortado()
     {
+        cuchillo.GetComponent<Cuchillo>().cut = false;
         audio.Stop();
         Destroy(progresBar);
         progreso = 0;

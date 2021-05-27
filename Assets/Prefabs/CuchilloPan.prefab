@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3248878828565433388}
+  - component: {fileID: 892040332219378275}
   m_Layer: 0
   m_Name: CuchilloPan
   m_TagString: Untagged
@@ -194,3 +195,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -58.02, z: 0}
+--- !u!114 &892040332219378275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416584894024831479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90aeda3c2e7141c4497899222226d5d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeCuchillo: 1
+  cut: 0
