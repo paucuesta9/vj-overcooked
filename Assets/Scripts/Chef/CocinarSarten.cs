@@ -109,6 +109,7 @@ public class CocinarSarten : MonoBehaviour
         }
         else if (progreso != 0)
         {
+            audio.Stop();
             Destroy(progresBar);
             progreso = 0;
         }

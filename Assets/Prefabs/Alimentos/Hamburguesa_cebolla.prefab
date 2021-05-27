@@ -170,15 +170,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 846883479517331541, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.609
+      value: -0.4814667
       objectReference: {fileID: 0}
     - target: {fileID: 846883479517331541, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.087
+      value: -0.012727195
       objectReference: {fileID: 0}
     - target: {fileID: 846883479517331541, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.397
+      value: 0.14377645
       objectReference: {fileID: 0}
     - target: {fileID: 846883479517331541, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
       propertyPath: m_LocalRotation.w
@@ -211,6 +211,14 @@ PrefabInstance:
     - target: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
       propertyPath: m_Name
       value: Cebolla_cortada
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557268051736948367, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557268051736948367, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
