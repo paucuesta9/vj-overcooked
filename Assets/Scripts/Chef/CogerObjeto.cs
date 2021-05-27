@@ -236,8 +236,14 @@ public class CogerObjeto : MonoBehaviour
                     }
                 }
                 else utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
-                if (Encimera.tag == "Encimera")
+                if (Encimera.tag == "Encimera") {
                     Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    if (Encimera.transform.GetChild(2).name == "Pan(Clone)") {
+                        Encimera.transform.GetChild(2).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                        Encimera.transform.GetChild(2).transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    }
+                    else Encimera.transform.GetChild(2).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                }
                 else if (Encimera.tag == "Fogon")
                     foreach (Transform hijo in Encimera.transform)
                     {
@@ -471,7 +477,20 @@ public class CogerObjeto : MonoBehaviour
                 if (!hasEncimeraATabla(other.gameObject, 0))
                 {
                     if (other.gameObject.name.Contains("Esquina")) other.gameObject.transform.GetChild(2).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
-                    else other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                    else {
+                        other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                        foreach (Transform hijo in other.gameObject.transform)
+                        {
+                            if (hijo.name == "Pan(Clone)") {
+                                hijo.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                                hijo.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                            }
+                            else if (hijo.name != "encimera" && hijo.name != "Object" && hijo.name != "Box")
+                            {
+                                hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+                            }
+                        }
+                    }    
                 }
             }
             else if (tag == "Fogon")
@@ -562,6 +581,17 @@ public class CogerObjeto : MonoBehaviour
             {
                 if (!hasEncimeraATabla(mueble, 1))
                     Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+                    foreach (Transform hijo in Encimera.transform)
+                        {
+                            if (hijo.name == "Pan(Clone)") {
+                                hijo.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
+                                hijo.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = colorToPaint;
+                            }
+                            else if (hijo.name != "encimera" && hijo.name != "Object" && hijo.name != "Box")
+                            {
+                                hijo.GetComponent<MeshRenderer>().material.color = colorToPaint;
+                            }
+                        }
             }
             else if (tag == "Fogon")
                 foreach (Transform hijo in Encimera.transform)
