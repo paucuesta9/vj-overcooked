@@ -17,7 +17,7 @@ public class Cortar : MonoBehaviour
     public GameObject jugador;
     AudioSource audio;
 
-    public GameObject panCortado, tomateCortado, lechugaCortada, quesoCortado, cebollaCortada;
+    public GameObject panCortado, tomateCortado, lechugaCortada, quesoCortado, cebollaCortada, patataCortada, pimientoCortado;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +58,7 @@ public class Cortar : MonoBehaviour
             {
                 if (progreso == 0)
                 {
-                    if (!GlobalVariables.mute ) audio.Play();
+                    if (!GlobalVariables.mute) audio.Play();
                     progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                     progresBar.transform.SetParent(transform);
                 }
@@ -134,6 +134,13 @@ public class Cortar : MonoBehaviour
                     newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
                     newAlimento.transform.SetParent(transform);
                     newAlimento.name = "pimiento_c";
+                }
+                if (nombre.Contains("Patata"))
+                {
+                    //TODO: Cambiar modelo a pimiento cortado
+                    newAlimento = (GameObject)Instantiate(patataCortada, pos, patataCortada.transform.rotation);
+                    newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "patata_c";
                 }
                 break;
             }

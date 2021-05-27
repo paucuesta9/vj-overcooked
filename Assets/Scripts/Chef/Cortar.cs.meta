@@ -11,6 +11,8 @@ MonoImporter:
   - lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   - quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   - cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+  - patataCortada: {fileID: 4165401197986793899, guid: abf1cc3c62feb4f4b83861d025ce1ad4, type: 3}
+  - pimientoCortado: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
