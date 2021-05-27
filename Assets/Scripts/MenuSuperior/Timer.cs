@@ -15,12 +15,14 @@ public class Timer : MonoBehaviour
     GameObject exit;
     public GameObject exitButton;
 
+    bool first;
+
     // Start is called before the first frame update
     void Start()
     {
         timer.text = tiempo.ToString("00");
-        timesUP = transform.Find("tabla").gameObject;
         exit = transform.Find("Exit").gameObject;
+        first = true;
     }
 
     // Update is called once per frame
@@ -30,11 +32,20 @@ public class Timer : MonoBehaviour
             timer.text = calcularTiempo();
         }
         else {
-            timesUP.SetActive(true);
-            exit.SetActive(true);
-            exit.transform.GetChild(0).gameObject.SetActive(true);
-            tiempo = 0;
-            timer.text = "00:00";
+            if (first) {
+                timer.text = "00:00";
+                Debug.Log("Y YO NACÍ");
+                timesUP = (GameObject)Instantiate(timeUP);
+                timesUP.transform.SetParent(transform);
+                timesUP.transform.rotation = timesUP.transform.parent.rotation;
+                timesUP.transform.localScale = new Vector3(1f, 1f, 1f);
+                Vector3 pos = new Vector3(0f, 400f, 0f);
+                timesUP.transform.localPosition = pos;
+                exit.SetActive(true);
+                exit.transform.GetChild(0).gameObject.SetActive(true);
+                tiempo = 0;
+                first = false;
+            }
         }
   
     }

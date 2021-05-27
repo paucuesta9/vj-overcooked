@@ -53,7 +53,7 @@ public class AparicionPedidos : MonoBehaviour
                     cartelesPedidos[i].transform.position = cartelesPedidos[i-1].transform.position + new Vector3(1.55f, 0, 0);
                 }
                 else {
-                    Vector3 pos = new Vector3(-810f, 450f, 1f);
+                    Vector3 pos = new Vector3(-810f, 450f, 0f);
                      cartelesPedidos[i].transform.localPosition = pos;
                 }
                 cartelesPedidos[i].name = plato.ToString();

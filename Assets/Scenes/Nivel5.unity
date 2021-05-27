@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (7)
+      value: EncimeraGiro (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant
+      value: EncimeraGiro2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -1014,7 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (18)
+      value: EncimeraGiro2 (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -1160,7 +1160,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (2)
+      value: EncimeraGiro2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -1291,7 +1291,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (19)
+      value: EncimeraGiro2 (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -1423,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (10)
+      value: EncimeraGiro2 (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -1978,129 +1978,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7012456645192912880, guid: 6c249afac4fcfed4a8b47204dc3c9485, type: 3}
   m_PrefabInstance: {fileID: 367234927}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &426803374
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1505343692}
-    m_Modifications:
-    - target: {fileID: 305216858785456854, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Name
-      value: tabla
-      objectReference: {fileID: 0}
-    - target: {fileID: 305216858785456854, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 999.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 447.40002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -151
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760068350920268293, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Color.b
-      value: 0.4245283
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760068350920268293, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Color.g
-      value: 0.012595957
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760068350920268293, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
---- !u!1 &426803375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 305216858785456854, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-  m_PrefabInstance: {fileID: 426803374}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &426803376 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3333313462594786530, guid: 5becc48ad4af0934083bd54c63809688, type: 3}
-  m_PrefabInstance: {fileID: 426803374}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &432928830
 GameObject:
@@ -3458,7 +3335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771637210}
   m_Layer: 0
-  m_Name: EncimerasIsla
+  m_Name: EncimerasVar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4872,7 +4749,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (16)
+      value: EncimeraGiro2(16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -5587,7 +5464,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (9)
+      value: EncimeraGiro2 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -7163,7 +7040,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (15)
+      value: EncimeraGiro2 (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}
@@ -7514,7 +7391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempo: 300
   timer: {fileID: 1230238936}
-  timeUP: {fileID: 426803375}
+  timeUP: {fileID: 3814934569752181941, guid: 9adf27331ca737441ad546a157d0d415, type: 3}
   exitButton: {fileID: 1922289319}
 --- !u!114 &1505343689
 MonoBehaviour:
@@ -7591,7 +7468,6 @@ RectTransform:
   - {fileID: 722722510}
   - {fileID: 1339536723}
   - {fileID: 1827887245}
-  - {fileID: 426803376}
   - {fileID: 1922289320}
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -9452,7 +9328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4340187579142881683, guid: 3d01f76298c7c7148913a6c9240cfc61, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4340187579142881683, guid: 3d01f76298c7c7148913a6c9240cfc61, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9821,7 +9697,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
     - target: {fileID: 6716712791368712218, guid: 351d1682089f75149ab189b90447baa8, type: 3}
       propertyPath: m_Name
-      value: EncimeraGiro Variant (17)
+      value: EncimeraGiro2 (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d1682089f75149ab189b90447baa8, type: 3}

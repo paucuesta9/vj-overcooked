@@ -483,7 +483,7 @@ public class CogerObjeto : MonoBehaviour
                         other.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                         foreach (Transform hijo in other.gameObject.transform)
                         {
-                            if (hijo.name == "Pan(Clone)") {
+                            if (other.gameObject.name.Contains("an")) {
                                 hijo.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                                 hijo.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                             }
@@ -585,7 +585,7 @@ public class CogerObjeto : MonoBehaviour
                     Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
                     foreach (Transform hijo in Encimera.transform)
                         {
-                            if (hijo.name == "Pan(Clone)") {
+                            if (Encimera.name.Contains("an")) {
                                 hijo.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = colorToPaint;
                                 hijo.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = colorToPaint;
                             }
