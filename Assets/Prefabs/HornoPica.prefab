@@ -601,6 +601,9 @@ GameObject:
   - component: {fileID: 6231562261721762340}
   - component: {fileID: 451026134831493859}
   - component: {fileID: 7675087411827717833}
+  - component: {fileID: 7894634137055671267}
+  - component: {fileID: 8847917861320402230}
+  - component: {fileID: 2724261979860431785}
   m_Layer: 0
   m_Name: basin
   m_TagString: Untagged
@@ -768,6 +771,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7894634137055671267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735227285407250788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21cc64a46723f143ab1db8c03a08274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  plato: {fileID: 0}
+--- !u!114 &8847917861320402230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735227285407250788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54970157ed3a5e24eaac10a646418bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
+  jugador: {fileID: 0}
+--- !u!65 &2724261979860431785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735227285407250788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27509636, y: 0.14224002, z: 0.07726633}
+  m_Center: {x: -0.017815888, y: -0.05713595, z: -0.037141275}
 --- !u!1 &7909542364653399808
 GameObject:
   m_ObjectHideFlags: 0

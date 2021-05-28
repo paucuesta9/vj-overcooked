@@ -31,6 +31,7 @@ public class CogerObjeto : MonoBehaviour
     bool hasEncimera, dejarExtintor;
 
     public GameObject menuSuperior;
+
     void Start()
     {
         canpickup = false;
@@ -226,7 +227,6 @@ public class CogerObjeto : MonoBehaviour
                     if (Encimera.tag == "Fin")
                     {
                         Encimera.GetComponent<PlatoTerminado>().finished();
-
                     }
                 }
                 if (utensilio.Object.name.Contains("an"))
