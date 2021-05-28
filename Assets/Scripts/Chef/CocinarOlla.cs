@@ -92,7 +92,12 @@ public class CocinarOlla : MonoBehaviour
                             {
                                 if (ingrediente.name == "ensalada_patatas")
                                     ingrediente.name = "ensalada_patatas_o";
-                                else ingrediente.name.Replace("_c", "_o");
+                                else
+                                {
+                                    Debug.Log(ingrediente.name);
+                                    ingrediente.name = ingrediente.name.Replace("_c", "_o");
+                                    Debug.Log(ingrediente.name);
+                                }
                             }
                         }
                     }

@@ -34,6 +34,7 @@ public class PlatoTerminado : MonoBehaviour
                     }
                 }
                 hijo.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
+                hijo.GetComponent<EstadoPlato>().limpio = false;
             }
         }
     }
