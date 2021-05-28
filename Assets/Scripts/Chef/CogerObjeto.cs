@@ -71,7 +71,7 @@ public class CogerObjeto : MonoBehaviour
             }
             else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
-        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && Input.GetKeyDown("e"))
+        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && ((!GlobalVariables.mouse && Input.GetKeyDown("e")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))))
         {
             foreach (Transform hijo in Encimera.transform)
             {
@@ -139,6 +139,7 @@ public class CogerObjeto : MonoBehaviour
                 else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 if (utensilio.Object.tag == "Plato")
                 {
+                    if (!utensilio.Object.GetComponent<EstadoPlato>().limpio) utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
                     utensilio.Object.GetComponent<Collider>().enabled = true;
                 }
             }
@@ -151,6 +152,7 @@ public class CogerObjeto : MonoBehaviour
                 {
                     Destroy(alimento.gameObject);
                 }
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
             }
             else if (hasEncimera && Encimera.tag != "Caja")
             {
@@ -241,17 +243,7 @@ public class CogerObjeto : MonoBehaviour
                     }
                 }
                 else utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;
-                if (Encimera.tag == "Encimera")
-                {
-                    Encimera.transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
-                    if (Encimera.transform.GetChild(2).name == "Pan(Clone)")
-                    {
-                        Encimera.transform.GetChild(2).transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
-                        Encimera.transform.GetChild(2).transform.GetChild(1).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
-                    }
-                    else Encimera.transform.GetChild(2).GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
-                }
-                else if (Encimera.tag == "Fogon")
+                if (Encimera.tag == "Fogon")
                     foreach (Transform hijo in Encimera.transform)
                     {
                         if (hijo.name != "Object" && hijo.name != "Fuego")
@@ -375,6 +367,7 @@ public class CogerObjeto : MonoBehaviour
                             hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                     }
                 }
+                else if (tag == "Plato" && !other.gameObject.GetComponent<EstadoPlato>().limpio) other.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
                 else
                 {
                     Debug.Log("SUPERHOLII");
