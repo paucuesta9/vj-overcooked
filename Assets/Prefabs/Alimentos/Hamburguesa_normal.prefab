@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 101767631753278047}
+  - component: {fileID: 8628026242086335153}
   m_Layer: 0
   m_Name: Hamburguesa_normal
   m_TagString: Comida
@@ -36,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8628026242086335153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672469782034750548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.61, y: 0.94, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &602401679970218761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,7 +105,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lechuga_cortada
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3360581044197232406, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
 --- !u!4 &6591327172867461710 stripped
 Transform:
@@ -165,7 +180,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cebolla_cortada
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5993932176960782481, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
 --- !u!4 &1614572552305628309 stripped
 Transform:
@@ -227,7 +243,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Queso_cortado
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6941938970015270184, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
 --- !u!4 &6369682060373787128 stripped
 Transform:
@@ -289,7 +306,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4057201975213228249, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
 --- !u!4 &3042907125703419946 stripped
 Transform:
@@ -351,7 +369,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4346797223333390010, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
 --- !u!4 &1037043623829832955 stripped
 Transform:
@@ -413,7 +432,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carne
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7686381714924391716, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
 --- !u!4 &3026325169814992142 stripped
 Transform:

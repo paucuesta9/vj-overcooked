@@ -37,7 +37,6 @@ public class Cuchillo : MonoBehaviour
             if (typeCuchillo == 1)
             {
                 double posz = Math.Sin(pos) / 4;
-
                 transform.position = new Vector3(transform.position.x, transform.position.y, (float)posz + initialPos.z);
             }
             else

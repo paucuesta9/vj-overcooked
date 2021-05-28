@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804213631281855288}
+  - component: {fileID: 2833663637197923132}
   m_Layer: 0
   m_Name: Hamburguesa_alPlato
   m_TagString: Comida
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2833663637197923132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058397006201714821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 1, z: 1.3}
+  m_Center: {x: 0.08, y: -0.27, z: 0}
 --- !u!1001 &361073961455386712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,15 +72,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ed1080193fc5458b68e7cfcf52b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.422
+      value: -0.489
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ed1080193fc5458b68e7cfcf52b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.11
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ed1080193fc5458b68e7cfcf52b25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.664
+      value: -1.473
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304ed1080193fc5458b68e7cfcf52b25, type: 3}
       propertyPath: m_LocalRotation.w
@@ -136,15 +150,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541308424919449332, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.84
+      value: 0.013
       objectReference: {fileID: 0}
     - target: {fileID: 6541308424919449332, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.056026
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6541308424919449332, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.0230002
+      value: -0.101
       objectReference: {fileID: 0}
     - target: {fileID: 6541308424919449332, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -178,7 +192,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carne
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7686381714924391716, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
 --- !u!4 &4862006448566736745 stripped
 Transform:
@@ -202,15 +217,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8847110643453791374, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.861
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8847110643453791374, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.165
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8847110643453791374, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.03
+      value: 0.179
       objectReference: {fileID: 0}
     - target: {fileID: 8847110643453791374, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -240,7 +255,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4057201975213228249, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
 --- !u!4 &2426561959987214295 stripped
 Transform:

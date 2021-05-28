@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4276953810828389669}
+  - component: {fileID: 5993241965657950142}
   m_Layer: 0
   m_Name: Hamburguesa_infantil
   m_TagString: Comida
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5993241965657950142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983494925623983917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.57, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &987786137019858748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,7 +102,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carne
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7686381714924391716, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da0cded3a313b3845b11823fad9002e1, type: 3}
 --- !u!4 &6301159409066721736 stripped
 Transform:
@@ -150,7 +165,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Queso_cortado
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6941938970015270184, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
 --- !u!4 &8573779813282423641 stripped
 Transform:
@@ -212,7 +228,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4346797223333390010, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
 --- !u!4 &2848650904900259844 stripped
 Transform:
