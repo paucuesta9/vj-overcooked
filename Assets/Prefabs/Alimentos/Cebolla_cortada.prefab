@@ -41,10 +41,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6953553671383872156}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.04, y: 5.04, z: 1}
+  m_Size: {x: 9, y: 9, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &8904869686678507895
 MeshFilter:

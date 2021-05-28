@@ -36,7 +36,7 @@ public class CocinarHorno : MonoBehaviour
                 int num = 0;
                 foreach (Transform ingrediente in transform)
                 {
-                    if (ingrediente.gameObject.name == "pan_c") ++num;
+                    if (ingrediente.gameObject.name == "Pan_c") ++num;
                     if (ingrediente.gameObject.name == "tomate_c") ++num;
                     if (ingrediente.gameObject.name == "queso_c") ++num;
                     if (ingrediente.gameObject.name == "pimiento_c") ++num;
@@ -103,10 +103,18 @@ public class CocinarHorno : MonoBehaviour
     {
         foreach (Transform alimento in transform)
         {
-            if (alimento.name != "Object")
+            if (alimento.name != "Object" && alimento.tag != "ProgressBar")
             {
-                alimento.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(154, 57, 21, 255);
-                alimento.name.Replace("_h", "_q");
+                if (alimento.name.Contains("Pan")) {
+                    foreach (Transform hijo in alimento.transform)
+                    {
+                        hijo.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(154, 57, 21, 255);
+                    }
+                }
+                else {
+                    alimento.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(154, 57, 21, 255);
+                    alimento.name.Replace("_h", "_q");
+                }
             }
         }
     }
@@ -115,5 +123,6 @@ public class CocinarHorno : MonoBehaviour
     {
         Destroy(progresBar);
         progreso = 0;
+        active = false;
     }
 }

@@ -17,11 +17,11 @@ public class ComprobarPlato : MonoBehaviour
     void Start()
     {
         numIngredientes = 0;
-        ingredientesValidos = new string[] { "lechuga_c", "tomate_c", "patata_o", "tomate_o", "pimiento_o", "queso_o", "pan_c", "carne_s", "carne_queso_s", "carne_queso_cebolla_s", "pizza_m", "pizza_c" };
+        ingredientesValidos = new string[] { "lechuga_c", "tomate_c", "patata_o", "tomate_o", "pimiento_o", "queso_o", "Pan_c", "carne_s", "carne_queso_s", "carne_queso_cebolla_s", "pizza_m", "pizza_c" };
         platos[0] = new string[] { "lechuga_c", "lechuga_c", "lechuga_c", "tomate_c", "tomate_c" }; // Ensalada de lechuga y tomate
         platos[1] = new string[] { "ensalada_patatas_o" }; // Ensalada de patatas
-        platos[2] = new string[] { "pan_c", "carne_queso_s" }; // Cheeseburguer
-        platos[3] = new string[] { "carne_queso_cebolla_s", "tomate_c", "lechuga_c", "pan_c" }; // Hamburguesa completa
+        platos[2] = new string[] { "Pan_c", "carne_queso_s" }; // Cheeseburguer
+        platos[3] = new string[] { "carne_queso_cebolla_s", "tomate_c", "lechuga_c", "Pan_c" }; // Hamburguesa completa
         platos[4] = new string[] { "carne_s", "patata_o", "tomate_c" }; // Carne al plato
         platos[5] = new string[] { "pizza_m_h" }; // Pizza margarita
         platos[6] = new string[] { "pizza_c_h" }; // Pizza completa
