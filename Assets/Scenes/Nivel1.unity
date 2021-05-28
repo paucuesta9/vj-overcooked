@@ -3519,6 +3519,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e3ed256ec544f9745bba465c0cbc9143, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b387c1aa9e486074082cad0881723d9a, type: 3}
+--- !u!1 &429134424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7790054498518083495, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  m_PrefabInstance: {fileID: 1508230982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &432122240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4335,7 +4340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1668229934}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &499188502 stripped
 Transform:
@@ -14845,6 +14850,10 @@ PrefabInstance:
       propertyPath: camara
       value: 
       objectReference: {fileID: 517639196}
+    - target: {fileID: -1406857675584082002, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+      propertyPath: mirada
+      value: 
+      objectReference: {fileID: 429134424}
     - target: {fileID: -1406857675584082002, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: menuSuperior
       value: 
