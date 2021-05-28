@@ -14732,8 +14732,8 @@ MonoBehaviour:
   lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
-  patataCortada: {fileID: 0}
-  pimientoCortado: {fileID: 0}
+  patataCortada: {fileID: 1981313309597734122, guid: abf1cc3c62feb4f4b83861d025ce1ad4, type: 3}
+  pimientoCortado: {fileID: 4563687551216388813, guid: 40a0e11f619beca438a81c4b62d341fa, type: 3}
 --- !u!82 &1497515154
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14876,7 +14876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1096226724105568181, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1368054280099469429, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
@@ -14900,7 +14900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1603899170929675546, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1722848691353410979, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
@@ -14908,7 +14908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922686273886373016, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1957996758367683285, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_RootOrder
@@ -15112,6 +15112,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025620839196309722, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946776477166697920, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554610420364080411, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8175153809728811167, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
@@ -17161,8 +17169,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04, y: 0.01, z: 0.03}
-  m_Center: {x: 0, y: 0.005, z: 0}
+  m_Size: {x: 0.023, y: 0.015, z: 0.03}
+  m_Center: {x: 0, y: 0.0099, z: 0}
 --- !u!1001 &1668531969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20858,8 +20866,8 @@ MonoBehaviour:
   lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
-  patataCortada: {fileID: 0}
-  pimientoCortado: {fileID: 0}
+  patataCortada: {fileID: 1981313309597734122, guid: abf1cc3c62feb4f4b83861d025ce1ad4, type: 3}
+  pimientoCortado: {fileID: 4563687551216388813, guid: 40a0e11f619beca438a81c4b62d341fa, type: 3}
 --- !u!82 &2011850339
 AudioSource:
   m_ObjectHideFlags: 0

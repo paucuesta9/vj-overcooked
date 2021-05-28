@@ -137,13 +137,12 @@ public class Cortar : MonoBehaviour
                 if (nombre.Contains("Pimiento"))
                 {
                     //TODO: Cambiar modelo a pimiento cortado
-                    newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
+                    newAlimento = (GameObject)Instantiate(pimientoCortado, pos, pimientoCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
                     newAlimento.name = "pimiento_c";
                 }
                 if (nombre.Contains("Patata"))
                 {
-                    //TODO: Cambiar modelo a pimiento cortado
                     newAlimento = (GameObject)Instantiate(patataCortada, pos, patataCortada.transform.rotation);
                     newAlimento.transform.SetParent(transform);
                     newAlimento.name = "patata_c";
