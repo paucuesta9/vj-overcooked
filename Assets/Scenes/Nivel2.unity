@@ -599,13 +599,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 1
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 1016007054425581160, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
   tomateCortado: {fileID: 0}
   lechugaCortada: {fileID: 0}
   quesoCortado: {fileID: 0}
   cebollaCortada: {fileID: 0}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &71051040
 AudioSource:
   m_ObjectHideFlags: 0
@@ -794,28 +797,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 06a28977580966749a8a87753c57faf7, type: 2}
+    - target: {fileID: 8847917861320402230, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
+      propertyPath: jugador
+      value: 
+      objectReference: {fileID: 558860474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
---- !u!1 &73376969 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7735227285407250788, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
-  m_PrefabInstance: {fileID: 73376968}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &73376970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73376969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54970157ed3a5e24eaac10a646418bbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 558860474}
 --- !u!1001 &79938662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4109,13 +4096,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 1
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 1016007054425581160, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
   tomateCortado: {fileID: 0}
   lechugaCortada: {fileID: 0}
   quesoCortado: {fileID: 0}
   cebollaCortada: {fileID: 0}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &425124810
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4395,13 +4385,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 0
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 0}
   tomateCortado: {fileID: 2169207087098277034, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
   lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &435689201
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7272,13 +7265,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 0
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 0}
   tomateCortado: {fileID: 2169207087098277034, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
   lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &788406201
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8415,13 +8411,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 0
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 0}
   tomateCortado: {fileID: 2169207087098277034, guid: 9c38fcc13b39cd148a3b24dd5169a20d, type: 3}
   lechugaCortada: {fileID: 6495842616725697332, guid: 6fdddb33212b97d45a76c6dc69c14380, type: 3}
   quesoCortado: {fileID: 8252256628511394608, guid: d9b42b6f452d545439cf2c96b94eb40a, type: 3}
   cebollaCortada: {fileID: 6953553671383872156, guid: 8bd1858e4c35cee418db2f09a0407795, type: 3}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &873434815
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12154,13 +12153,16 @@ MonoBehaviour:
   active: 0
   canCut: 0
   typeCuchillo: 1
+  cuchillo: {fileID: 0}
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
-  jugador: {fileID: 583400859958210168, guid: a7ffe60f13ea34a40832eab8a973b545, type: 3}
+  jugador: {fileID: 558860474}
   panCortado: {fileID: 1016007054425581160, guid: 486a0b659e864ff489e15c6726884b27, type: 3}
   tomateCortado: {fileID: 0}
   lechugaCortada: {fileID: 0}
   quesoCortado: {fileID: 0}
   cebollaCortada: {fileID: 0}
+  patataCortada: {fileID: 0}
+  pimientoCortado: {fileID: 0}
 --- !u!82 &1418405720
 AudioSource:
   m_ObjectHideFlags: 0

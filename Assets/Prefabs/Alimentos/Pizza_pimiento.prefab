@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4078667051412177102}
   - component: {fileID: 2889937519869959380}
   - component: {fileID: 6883525519184530980}
-  - component: {fileID: 7592840143972191115}
+  - component: {fileID: 3288151746572765156}
   m_Layer: 0
   m_Name: Pizza_pimiento
   m_TagString: Comida
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046523405939124555}
   m_Mesh: {fileID: -951608786083511892, guid: ecb994d7ef990f2458a1e74a62a05dbb, type: 3}
---- !u!65 &7592840143972191115
+--- !u!65 &3288151746572765156
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9206045, y: 3.66, z: 6.67}
-  m_Center: {x: 0.009419084, y: -1.09, z: -0.0042595863}
+  m_Size: {x: 5.86, y: 0.21546744, z: 6.05}
+  m_Center: {x: 0.009419084, y: 0.10773287, z: -0.0042595863}

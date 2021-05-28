@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1577676890297316242}
   - component: {fileID: 2687355493927069087}
   - component: {fileID: 2952301203828478673}
-  - component: {fileID: 2169404765463455251}
+  - component: {fileID: 704706809862536917}
   m_Layer: 0
   m_Name: Pizza_margarita
   m_TagString: Comida
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2169404765463455251
+--- !u!65 &704706809862536917
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9206045, y: 2.11, z: 7.15}
-  m_Center: {x: 0.009419084, y: -0.56, z: -0.97}
+  m_Size: {x: 6.41, y: 0.21546744, z: 5.65}
+  m_Center: {x: 0.009419084, y: 0.10773287, z: -0.0042595863}

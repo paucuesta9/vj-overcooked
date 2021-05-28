@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 6025620839196309722}
   - component: {fileID: 5796633338001835217}
   - component: {fileID: -1406857675584082002}
-  - component: {fileID: 8175153809728811167}
   m_Layer: 0
   m_Name: Pug
   m_TagString: Untagged

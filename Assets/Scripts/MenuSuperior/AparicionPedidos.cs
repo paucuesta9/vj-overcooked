@@ -64,6 +64,7 @@ public class AparicionPedidos : MonoBehaviour
     }
 
     public void finished(string num) {
+        audio2.Play();
         bool destroyed = false;
         for (int j = 0; j < i; ++j) {
             if (destroyed) {
