@@ -194,8 +194,8 @@ public class CogerObjeto : MonoBehaviour
                                     {
                                         if (alimento.name != "Agua" && alimento.name != "Object")
                                         {
-                                            alimento.parent = utensilio.Object.transform;
-                                            alimento.position = utensilio.Object.transform.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            alimento.parent = hijo;
+                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
