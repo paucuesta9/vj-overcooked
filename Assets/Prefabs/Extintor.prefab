@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7443387017592681871}
   - component: {fileID: 4659200621793853765}
   - component: {fileID: -585714197757785285}
+  - component: {fileID: 6708444183407261579}
+  - component: {fileID: 1179348290477468207}
   m_Layer: 0
   m_Name: Extintor
   m_TagString: Untagged
@@ -96,3 +98,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBarModel: {fileID: 7140503294937077168, guid: 7ca596c4846a03c43b83ead1fddf3cc3, type: 3}
   nieveCarbonicaModel: {fileID: 4452203289665739065, guid: 0e16a0fb89464ac49a3333717175e7df, type: 3}
+--- !u!65 &6708444183407261579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082955202379099439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02788733, y: 0.05675894, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1179348290477468207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082955202379099439}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.025, z: 0.01913937}
+  m_Center: {x: 0, y: -0.018, z: 0}

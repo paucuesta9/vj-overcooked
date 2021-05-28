@@ -136,7 +136,6 @@ public class Cortar : MonoBehaviour
                 }
                 if (nombre.Contains("Pimiento"))
                 {
-                    //TODO: Cambiar modelo a pimiento cortado
                     newAlimento = (GameObject)Instantiate(pimientoCortado, pos, pimientoCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
                     newAlimento.name = "pimiento_c";
@@ -150,8 +149,5 @@ public class Cortar : MonoBehaviour
                 break;
             }
         }
-        // Debug.Log("CORTOOOOOOO");
-        // jugador.GetComponent<CogerObjeto>().utensilio.Object = newAlimento;
-        // Debug.Log(jugador.GetComponent<CogerObjeto>().utensilio.Object.name);
     }
 }

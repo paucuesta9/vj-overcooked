@@ -123,7 +123,6 @@ public class CogerObjeto : MonoBehaviour
                     Debug.Log(parent.name);
                     if (parent.tag == "Plato")
                     {
-                        Debug.Log("EEEEEE");
                         canpickup = true;
                         utensilio = new Utensilio(parent, new Color(0, 0, 1));
                         utensilio.Object.GetComponent<MeshRenderer>().material.color = colorToPaint;

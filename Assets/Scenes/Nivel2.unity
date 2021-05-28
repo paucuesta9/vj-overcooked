@@ -813,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 8847917861320402230, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 406688668}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c9ecb4c091fa043a96a7ad983bde54, type: 3}
 --- !u!1001 &79938662
@@ -16631,8 +16631,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.712444, y: 20.859755, z: 0.10160057}
-  m_Center: {x: -0.000031232834, y: 0.00012254715, z: -0.0000136606395}
+  m_Size: {x: 15.7124405, y: 20.859749, z: 34.77}
+  m_Center: {x: 4.23, y: 0.01, z: -7.86}
 --- !u!1001 &1970351773
 PrefabInstance:
   m_ObjectHideFlags: 0
