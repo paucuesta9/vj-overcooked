@@ -3,7 +3,10 @@ guid: e6bdafb134aa7b649b177ae881b5c7a6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - menuSuperior: {instanceID: 0}
+  - camara: {instanceID: 0}
+  - humo: {fileID: 5942941260894185876, guid: 040f7edf8e07f81478ee0c9b95090906, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

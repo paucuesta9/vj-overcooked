@@ -34,6 +34,14 @@ public class CocinarSarten : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hayFuego && fire == null)
+        {
+            hayFuego = false;
+            audio.Stop();
+            Destroy(progresBar);
+            progreso = 0;
+            active = false;
+        }
         if (active)
         {
             if (progreso == 0)
@@ -88,7 +96,7 @@ public class CocinarSarten : MonoBehaviour
                     if (hijo.tag == "Utensilio")
                     {
                         foreach (Transform ingrediente in hijo)
-                        {   
+                        {
                             if (!ingrediente.name.Contains("arne"))
                                 ingrediente.name.Replace("_c", "_s");
                             else if (ingrediente.name.Contains("Carne"))
@@ -132,22 +140,24 @@ public class CocinarSarten : MonoBehaviour
                     }
                 }
             }
-                if (!hayFuego) {
-                    fire = (GameObject)Instantiate(fireModel, hijo.position + new Vector3(0,0.5f,-0.5f), fireModel.transform.rotation);
-                    hayFuego = true;
-                }
+            if (!hayFuego)
+            {
+                fire = (GameObject)Instantiate(fireModel, hijo.position + new Vector3(0, 0.5f, -0.5f), fireModel.transform.rotation);
+                hayFuego = true;
+            }
         }
-         
+
     }
 
-    public void finish() {
+    public void finish()
+    {
         Destroy(progresBar);
-       foreach (Transform hijo in transform)
+        foreach (Transform hijo in transform)
         {
             if (hijo.tag == "Utensilio")
             {
                 foreach (Transform ingrediente in hijo)
-                {   
+                {
                     if (!ingrediente.name.Contains("arne"))
                         ingrediente.name.Replace("_c", "_s");
                     else if (ingrediente.name.Contains("Carne"))

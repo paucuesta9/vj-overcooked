@@ -9,6 +9,8 @@ public class Cortar : MonoBehaviour
     public bool active, canCut;
     public int typeCuchillo;
 
+    public GameObject cuchillo;
+
     public GameObject progressBarModel;
     GameObject progresBar;
     GameObject newAlimento;
@@ -17,7 +19,7 @@ public class Cortar : MonoBehaviour
     public GameObject jugador;
     AudioSource audio;
 
-    public GameObject panCortado, tomateCortado, lechugaCortada, quesoCortado, cebollaCortada;
+    public GameObject panCortado, tomateCortado, lechugaCortada, quesoCortado, cebollaCortada, patataCortada, pimientoCortado;
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +58,10 @@ public class Cortar : MonoBehaviour
             }
             if (canCut && ((!GlobalVariables.mouse && (Input.GetKeyDown("c") || Input.GetKey("c"))) || (GlobalVariables.mouse && (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1)))))
             {
+                cuchillo.GetComponent<Cuchillo>().cut = true;
                 if (progreso == 0)
                 {
-                    if (!GlobalVariables.mute ) audio.Play();
+                    if (!GlobalVariables.mute) audio.Play();
                     progresBar = (GameObject)Instantiate(progressBarModel, transform.position + new Vector3(0, 2, 0), progressBarModel.transform.rotation);
                     progresBar.transform.SetParent(transform);
                 }
@@ -70,6 +73,7 @@ public class Cortar : MonoBehaviour
             }
             else if (progreso != 0)
             {
+                cuchillo.GetComponent<Cuchillo>().cut = false;
                 Destroy(progresBar);
                 progreso = 0;
                 progresBar.transform.Find("ProgressBar").gameObject.GetComponent<Image>().fillAmount = progreso;
@@ -78,6 +82,7 @@ public class Cortar : MonoBehaviour
         }
         else if (progreso != 0)
         {
+            cuchillo.GetComponent<Cuchillo>().cut = false;
             Destroy(progresBar);
             progreso = 0;
             audio.Stop();
@@ -86,6 +91,7 @@ public class Cortar : MonoBehaviour
 
     private void cortado()
     {
+        cuchillo.GetComponent<Cuchillo>().cut = false;
         audio.Stop();
         Destroy(progresBar);
         progreso = 0;
@@ -134,6 +140,13 @@ public class Cortar : MonoBehaviour
                     newAlimento = (GameObject)Instantiate(cebollaCortada, pos, cebollaCortada.transform.rotation);
                     newAlimento.transform.SetParent(transform);
                     newAlimento.name = "pimiento_c";
+                }
+                if (nombre.Contains("Patata"))
+                {
+                    //TODO: Cambiar modelo a pimiento cortado
+                    newAlimento = (GameObject)Instantiate(patataCortada, pos, patataCortada.transform.rotation);
+                    newAlimento.transform.SetParent(transform);
+                    newAlimento.name = "patata_c";
                 }
                 break;
             }
