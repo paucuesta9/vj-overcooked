@@ -33,6 +33,7 @@ public class PlatoTerminado : MonoBehaviour
                         Destroy(plato.gameObject);
                     }
                 }
+                hijo.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
             }
         }
     }

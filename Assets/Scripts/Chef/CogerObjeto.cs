@@ -67,7 +67,7 @@ public class CogerObjeto : MonoBehaviour
             }
             else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
-        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && Input.GetKeyDown("e"))
+        else if (hasEncimera && Encimera.tag == "Horno" && hasItem && utensilio.Object.tag == "Plato" && ((!GlobalVariables.mouse && Input.GetKeyDown("e")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(0))))
         {
             foreach (Transform hijo in Encimera.transform)
             {
@@ -140,6 +140,7 @@ public class CogerObjeto : MonoBehaviour
                 else utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                 if (utensilio.Object.tag == "Plato")
                 {
+                    if (!utensilio.Object.GetComponent<EstadoPlato>().limpio) utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
                     utensilio.Object.GetComponent<Collider>().enabled = true;
                 }
             }
@@ -152,6 +153,7 @@ public class CogerObjeto : MonoBehaviour
                 {
                     Destroy(alimento.gameObject);
                 }
+                utensilio.Object.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
             }
             else if (hasEncimera && Encimera.tag != "Caja")
             {
@@ -194,8 +196,8 @@ public class CogerObjeto : MonoBehaviour
                                     {
                                         if (alimento.name != "Agua" && alimento.name != "Object")
                                         {
-                                            alimento.parent = utensilio.Object.transform;
-                                            alimento.position = utensilio.Object.transform.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            alimento.parent = hijo;
+                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
@@ -377,6 +379,7 @@ public class CogerObjeto : MonoBehaviour
                             hijo.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
                     }
                 }
+                else if (tag == "Plato" && !other.gameObject.GetComponent<EstadoPlato>().limpio) other.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
                 else
                 {
                     Debug.Log("SUPERHOLII");

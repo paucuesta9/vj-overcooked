@@ -38,6 +38,7 @@ public class LavarPlato : MonoBehaviour
                 if (progreso >= 1)
                 {
                     plato.GetComponent<EstadoPlato>().limpio = true;
+                    plato.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f);
                     Destroy(progresBar);
                     progreso = 0;
                     active = false;
