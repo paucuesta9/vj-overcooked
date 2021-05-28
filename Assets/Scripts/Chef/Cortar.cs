@@ -108,7 +108,7 @@ public class Cortar : MonoBehaviour
                 {
                     newAlimento = (GameObject)Instantiate(panCortado, pos, panCortado.transform.rotation);
                     newAlimento.transform.SetParent(transform);
-                    newAlimento.name = "pan_c";
+                    newAlimento.name = "Pan_c";
                 }
                 if (nombre.Contains("Queso"))
                 {
@@ -151,5 +151,8 @@ public class Cortar : MonoBehaviour
                 break;
             }
         }
+        // Debug.Log("CORTOOOOOOO");
+        // jugador.GetComponent<CogerObjeto>().utensilio.Object = newAlimento;
+        // Debug.Log(jugador.GetComponent<CogerObjeto>().utensilio.Object.name);
     }
 }

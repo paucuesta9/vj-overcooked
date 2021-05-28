@@ -17,7 +17,6 @@ public class NieveExtintor : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Fire") {
             other.gameObject.GetComponent<Fuego>().destroyObject();
         }
