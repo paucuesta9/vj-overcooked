@@ -197,7 +197,7 @@ public class CogerObjeto : MonoBehaviour
                                         if (alimento.name != "Agua" && alimento.name != "Object")
                                         {
                                             alimento.parent = hijo;
-                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * (numItems + 1), 0.0f);
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
@@ -211,7 +211,7 @@ public class CogerObjeto : MonoBehaviour
                                         if (alimento.name != "Object")
                                         {
                                             alimento.parent = hijo;
-                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                            alimento.position = hijo.position + new Vector3(0.0f, 0.1f * (numItems + 1), 0.0f);
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
@@ -220,7 +220,7 @@ public class CogerObjeto : MonoBehaviour
                                 else
                                 {
                                     utensilio.Object.transform.parent = hijo;
-                                    utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
+                                    utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * (numItems + 1), 0.0f);
                                     hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
                                     break;
                                 }
@@ -274,6 +274,7 @@ public class CogerObjeto : MonoBehaviour
                 hasItem = false;
                 utensilio.Object.transform.parent = Pared.transform;
                 utensilio.Object.transform.position = Pared.transform.Find("Object").transform.position;
+                dejarExtintor = false;
             }
         }
         if (((!GlobalVariables.mouse && Input.GetKeyDown("space")) || (GlobalVariables.mouse && Input.GetMouseButtonDown(1))) && hasItem == true && utensilio.Object.tag == "Extintor")
