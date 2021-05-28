@@ -157,7 +157,6 @@ public class CogerObjeto : MonoBehaviour
                         int numItems = Encimera.transform.childCount;
                         utensilio.Object.transform.parent = Encimera.transform;
                         utensilio.Object.transform.position = Encimera.transform.Find("Object").position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                        utensilio.Object.transform.rotation = Encimera.transform.rotation;
                     }
                     else if (Encimera.tag == "Fogon")
                     {
@@ -170,7 +169,6 @@ public class CogerObjeto : MonoBehaviour
                                 else numItems--;
                                 utensilio.Object.transform.parent = hijo;
                                 utensilio.Object.transform.position = hijo.Find("Object").position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                                utensilio.Object.transform.rotation = hijo.transform.rotation;
                             }
                         }
                     }
@@ -191,7 +189,6 @@ public class CogerObjeto : MonoBehaviour
                                         {
                                             alimento.parent = utensilio.Object.transform;
                                             alimento.position = utensilio.Object.transform.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                                            alimento.rotation = utensilio.Object.transform.rotation;
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
@@ -206,7 +203,6 @@ public class CogerObjeto : MonoBehaviour
                                         {
                                             alimento.parent = hijo;
                                             alimento.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                                            alimento.rotation = hijo.transform.rotation;
                                             hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(alimento.name);
                                         }
                                     }
@@ -216,7 +212,6 @@ public class CogerObjeto : MonoBehaviour
                                 {
                                     utensilio.Object.transform.parent = hijo;
                                     utensilio.Object.transform.position = hijo.position + new Vector3(0.0f, 0.1f * numItems, 0.0f);
-                                    utensilio.Object.transform.rotation = hijo.transform.rotation;
                                     hijo.gameObject.GetComponent<ComprobarPlato>().addIngredient(utensilio.Object.name);
                                     break;
                                 }
@@ -228,7 +223,6 @@ public class CogerObjeto : MonoBehaviour
                 {
                     utensilio.Object.transform.parent = Encimera.transform;
                     utensilio.Object.transform.position = Encimera.transform.Find("Object").position;
-                    utensilio.Object.transform.rotation = Encimera.transform.rotation;
                     if (Encimera.tag == "Fin")
                     {
                         Encimera.GetComponent<PlatoTerminado>().finished();
