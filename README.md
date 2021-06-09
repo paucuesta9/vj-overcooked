@@ -10,4 +10,4 @@
 - Developers:
 
 > - [Almoño Gómez, Judith](mailto:judith.almono@estudiantat.upc.edu)
-> - [Cuesta Arcos, Pau](mailto:pau.cuesta.arcos@estudianta.upc.edu)
+> - [Cuesta Arcos, Pau](mailto:pau.cuesta.arcos@estudiantat.upc.edu)
