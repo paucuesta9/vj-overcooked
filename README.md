@@ -6,6 +6,7 @@
 - Subject: [Videojocs (VJ)](https://www.fib.upc.edu/ca/estudis/graus/grau-en-enginyeria-informatica/pla-destudis/assignatures/VJ)
 - University: [Facultat d'Informàtica de Barcelona (FIB- UPC)](http://www.fib.upc.edu/)
 - Course: 2020/21 Q2
+- Final mark: 10/10
 - Date: 28/05/2021
 - Developers:
 
